@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "661880791094120CFA7F9E490FE4BA50D479EC92",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D58639103086100D9F25E64762BAFF1DD12A4DC3" : 9223372036854775807,
+    "661880791094120CFA7F9E490FE4BA50D479EC92" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D37C3C6C-9C35-42C0-8F23-E3666E08149B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D58639103086100D9F25E64762BAFF1DD12A4DC3" : "",
+    "661880791094120CFA7F9E490FE4BA50D479EC92" : "Customer_6%20Dec_Migrate_OnServer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Customer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Customer.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AjayS1\/OnDemand-App-.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "661880791094120CFA7F9E490FE4BA50D479EC92"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/doumees\/IOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D58639103086100D9F25E64762BAFF1DD12A4DC3"
+    }
+  ]
+}

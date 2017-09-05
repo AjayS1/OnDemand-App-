@@ -63,10 +63,6 @@
                       @"calender2",
                       @"sign_off",
                       nil];
-    //    [[NSNotificationCenter defaultCenter] addObserver:self
-    //                                             selector:@selector(checkSignalRReqest:)
-    //                                                 name:@"SignalR"
-    //                                               object:nil];
 }
 
 
@@ -104,14 +100,14 @@
         [self.navigationController pushViewController:paymentInfoView animated:NO];
         return;
     }
-
+    
     if (self.isEmailVerifiedOrNotPage) {
         self.isEmailVerifiedOrNotPage = NO;
         AccountInformationViewController *accountInfoView = [self.storyboard instantiateViewControllerWithIdentifier:@"accountInformation"];
         [self.navigationController pushViewController:accountInfoView animated:NO];
         return;
     }
-  
+    
     if (_isFromUpdateMobileNumber) {
         _isFromUpdateMobileNumber = NO;
         MobileNumberViewController *imageCropController = [self.storyboard instantiateViewControllerWithIdentifier:@"MobileNumberViewController"];
@@ -119,7 +115,7 @@
         [self.navigationController pushViewController:imageCropController animated:NO];
         return;
     }
-      [self fetchUserInfoApiData];
+    [self fetchUserInfoApiData];
     [self.labelVersionNumber setText:[NSString stringWithFormat:@"Doumees %@",sharedInstance.VersionValue]];
     [self.labelBuildNumber setText:[NSString stringWithFormat:@"Build %@",sharedInstance.BuildValueStr]];
     
@@ -468,7 +464,7 @@
                     referalCode = [resultDict valueForKey:@"ReferralURL"];
                     sharedInstance.firstNameStr = [resultDict valueForKey:@"FirstName"];
                     sharedInstance.userId = [resultDict valueForKey:@"UserID"];
-                       // UserID = Cr0074ee9;
+                    // UserID = Cr0074ee9;
                     sharedInstance.lastNameStr = [resultDict valueForKey:@"LastName"];
                     sharedInstance.isEditStr =       [resultDict valueForKey:@"IsVarEdit"];
                     sharedInstance.interestedGender = [resultDict valueForKey:@"InterestedIn"];

@@ -16,7 +16,7 @@
     IBOutlet UILabel *messageLbl;
     IBOutlet UISwitch *mySwitch;
     IBOutlet UIButton *checkncheckdBtn;
-     IBOutlet UIImageView *emailVerifiedImageView;
+    IBOutlet UIImageView *emailVerifiedImageView;
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *userImageView;

@@ -49,10 +49,12 @@
     [Fabric with:@[[Crashlytics class]]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     sharedInstance = [SingletonClass sharedInstance];
+    
     //Get App Version Number
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSLog(@"Version Number %@",version);
     sharedInstance.appVersionNumber = version;
+    
     //  [self getCurrentAddressOfClient];
     
     //--1) Push Notification **************
@@ -125,7 +127,7 @@
         NSLog(@"lapsed: %f", lapse);
         NSLog(@"muted: %d", muted);
         if (muted) {
-            NSLog(@"vibratePhone %@",@"here");
+            NSLog(@"vibratePhone here");
             if([[UIDevice currentDevice].model isEqualToString:@"iPhone"])
             {
                 AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
@@ -149,19 +151,20 @@
     [self.locationManager startUpdatingLocation];
     _geocoder = [[CLGeocoder alloc] init];
     
-    if(IS_OS_8_OR_LATER) {
+    if(IS_OS_8_OR_LATER)
+    {
         if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [self.locationManager requestWhenInUseAuthorization];
         }
         [self.locationManager startUpdatingLocation];
     }
-    else{
+    else
+    {
         if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [self.locationManager requestWhenInUseAuthorization];
         }
         [self.locationManager startUpdatingLocation];
     }
-    
 }
 
 

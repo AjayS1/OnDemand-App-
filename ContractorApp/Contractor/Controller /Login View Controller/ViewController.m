@@ -521,13 +521,9 @@
 - (void)signalRHubCall {
     
     // SignalR Code Here
-    
-    //http://ondemandapinew.flexsin.in/signalr/hubs
-    //http://ondemandapiqa.flexsin.in/signalr/hubs
-    
     APPDELEGATE.hubConnection = [SRHubConnection connectionWithURLString:SignalRBaseUrl];
-    //APPDELEGATE.hubConnection = [SRHubConnection connectionWithURLString:@"http://ondemandapinew.flexsin.in/signalr/hubs"];
     APPDELEGATE.hubConnection.delegate = self;
+    
     SRHubProxy *chat = [APPDELEGATE.hubConnection createHubProxy:@"RtcHub"];
     [chat on:@"notifybeginCall" perform:self selector:@selector(notifybeginCall:)];
    
@@ -581,8 +577,6 @@
                 {
                     [self changeStatusWithValue:@"0" WithReservationStr:@"0"];
                 }
-
-                
             });
         }
         if (sharedInstance.isUserLogoutManualyy) {
@@ -808,6 +802,7 @@
     NSString *typeIdStr = [temp5 objectAtIndex: 1];
     NSArray* temp6 = [sixBit componentsSeparatedByString: @"="];
     NSString *dateIdStr = [temp6 objectAtIndex: 1];
+    
     NSDictionary *responseObject = @{@"userId":userIdStr,@"dateCount":dateCountValueStr,@"messageCount":mesagesCountStr,@"notificationCount":notificationsCountValueStr,@"dateType":typeIdStr,@"dateId":dateIdStr};
     NSString *loginUserIdStr = sharedInstance.userId;
     if ([loginUserIdStr isEqualToString:userIdStr]) {

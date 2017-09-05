@@ -3,7 +3,7 @@
 //  Contractor
 //  Created by Jamshed Ali on 25/07/16.
 //  Copyright © 2016 Jamshed Ali. All rights reserved.
-////////
+
 
 #import "PaymentTableViewCell.h"
 #define WIN_WIDTH              [[UIScreen mainScreen]bounds].size.width

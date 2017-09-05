@@ -1658,6 +1658,34 @@
     if ([buttonStatus isEqualToString:@"4"]) {
         [self callAPiForCancelDateAfterStart];
     }
+    else  if ([buttonStatus isEqualToString:@"0"]) {
+        NSString    * urlString = [NSString stringWithFormat:@"%@?userID=%@&DateID=%@&ReasonID=%@",APIDateDecline,sharedInstance.userId,self.dateIdStr,@"0"];
+        NSString *encoded = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [ProgressHUD show:@"Please wait..." Interaction:NO];
+        [ServerRequest AFNetworkPostRequestUrl:encoded withParams:nil CallBack:^(id responseObject, NSError *error) {
+            NSLog(@"response object Get UserInfo List %@",responseObject);
+            [ProgressHUD dismiss];
+            if(!error){
+                
+                NSLog(@"Response is --%@",responseObject);
+                if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1) {
+//                    [[AlertView sharedManager] presentAlertWithTitle:@"Alert" message:[responseObject objectForKey:@"Message"]
+//                                                 andButtonsWithTitle:@[@"OK"] onController:self
+//                                                       dismissedWith:^(NSInteger index, NSString *buttonTitle)
+//                     {
+//                         if ([buttonTitle isEqualToString:@"OK"]) {
+                             [self.navigationController popViewControllerAnimated:YES];
+                         }
+//                     }];
+//                }
+                
+                else {
+                    [CommonUtils showAlertWithTitle:@"Alert" withMsg:[responseObject objectForKey:@"Message"] inController:self];
+                }
+            }
+        }];
+        
+    }
     else{
         
         [timer invalidate];

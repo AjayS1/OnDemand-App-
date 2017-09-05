@@ -588,37 +588,28 @@
                                                                                NSInteger notifiCount = [notificationCountValueStr integerValue];
                                                                                notifiCount = notifiCount-1;
                                                                                [[super.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue = [NSString stringWithFormat:@"%ld",(long)notifiCount];
-                                                                               
                                                                            }
-                                                                           
                                                                        }
-                                                                       
                                                                    }
-                                                                   else{
-                                                                       //                   [self.view setBackgroundColor:[UIColor whiteColor]];
-                                                                       //                   [self.dontHaveLabel setHidden:NO];
-                                                                       //                   [self.notificationImageView setHidden:NO];
+                                                                   else
+                                                                   {
                                                                        [notificationTableView setHidden:YES];
-
                                                                        [self notificationDetailsApiCall];
                                                                        
                                                                    }
-                                                                   
                                                                    // [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-                                                                   
-                                                               } else {
+                                                               }
+                                                               else {
                                                                    [self notificationDetailsApiCall];
-                                                                   
                                                                    //[CommonUtils showAlertWithTitle:@"Alert" withMsg:[responseObject objectForKey:@"Message"] inController:self];
                                                                }
                                                            }
                                                        }
-                                                   }];                                               }
+                                                   }];
+                                               }
                                            }];
-        
     }
 }
-
 
 
 @end

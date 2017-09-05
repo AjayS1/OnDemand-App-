@@ -414,14 +414,50 @@
     }];
 }
 
--(void)callAPiForCancel{
+-(void)callAPiForCancel
+{
     NSLog(@"Button Status VAlue %@", buttonStatus);
-    if ([buttonStatus isEqualToString:@"4"]) {
+    
+    if ([buttonStatus isEqualToString:@"4"])
+    {
         [self cancelTheDAtterStarted];
     }
-    else{
+    else if ([buttonStatus isEqualToString:@"0"])
+        {
+        // http://ondemandapiqa.flexsin.in/API/Customer/DeclineDate
+        NSString    * urlString = [NSString stringWithFormat:@"%@?userID=%@&DateID=%@",APIDeclineDate,sharedInstance.userId,self.dateIdStr];
+        
+        NSString *encoded = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [ProgressHUD show:@"Please wait..." Interaction:NO];
+        [ServerRequest AFNetworkPostRequestUrlForAddNewApi:encoded withParams:nil CallBack:^(id responseObject, NSError *error) {
+            NSLog(@"response object Get UserInfo List %@",responseObject);
+            [ProgressHUD dismiss];
+            if(!error){
+                
+                NSLog(@"Response is --%@",responseObject);
+                if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1) {
+//                    [[AlertView sharedManager] presentAlertWithTitle:@"Alert!" message:[responseObject objectForKey:@"Message"]
+//                                                 andButtonsWithTitle:@[@"OK"] onController:self
+//                                                       dismissedWith:^(NSInteger index, NSString *buttonTitle)
+//                     {
+//                         if ([buttonTitle isEqualToString:@"OK"]) {
+                             [self.navigationController popViewControllerAnimated:YES];
+                         }
+//                     }];
+                //}
+                else {
+                    [CommonUtils showAlertWithTitle:@"Alert!" withMsg:[responseObject objectForKey:@"Message"] inController:self];
+                }
+            }
+        }];
+        
+    }
+
+    else
+    {
     CancelDateViewController *cancelDateView = [self.storyboard instantiateViewControllerWithIdentifier:@"cancelDate"];
     cancelDateView.self.dateIdStr = _dateIdStr;
+        
     if (self.isFromRequestNow) {
         cancelDateView.self.isFromRequestNow = TRUE;
     }
@@ -429,6 +465,7 @@
     {
         cancelDateView.self.isFromRequestNow = FALSE;
     }
+        
     cancelDateView.buttonStatus = buttonStatus;
     NSLog(@"Date Type String Value %@",self.dateTypeStr);
     cancelDateView.dateTypeStr = self.dateTypeStr;

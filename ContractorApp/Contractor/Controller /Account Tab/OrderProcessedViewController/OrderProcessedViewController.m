@@ -31,7 +31,7 @@
     sharedInstance = [SingletonClass sharedInstance];
     [self.tabBarController.tabBar setHidden:YES];
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-
+    
     [self.orderDetailLabel setText:[NSString stringWithFormat:@"Thank you for your order.Your order number is %@. We charged %@ to your credit card %@.Below is your background check results from checkr.",sharedInstance.orderNumberStr,sharedInstance.productTotal,sharedInstance.productCardName]];
     [self.orderDetailLabel setFrame:CGRectMake(self.orderDetailLabel.frame.origin.x, self.orderDetailLabel.frame.origin.y, self.view.frame.size.width-36, self.orderDetailLabel.frame.size.height)];
     if ([sharedInstance.checkRResultStr isEqualToString:@"Passed"]) {

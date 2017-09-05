@@ -8,25 +8,25 @@
 @implementation CommonUtils
 
 /*
-//--View Background Color
-+(UIColor *)setBgColor{
-
-    return UIColorFromRGB(0X044E82);
-}
-
-//--View Background Color
-+(UIColor *)setNavBarBgColor{
-    
-    return UIColorFromRGB(0XD22C3B);
-}
-
-//--View Background Color
-+(UIColor *)setNavBarTitleColor{
-    
-    return UIColorFromRGB(0X518BD5);
-}
-
-*/
+ //--View Background Color
+ +(UIColor *)setBgColor{
+ 
+ return UIColorFromRGB(0X044E82);
+ }
+ 
+ //--View Background Color
+ +(UIColor *)setNavBarBgColor{
+ 
+ return UIColorFromRGB(0XD22C3B);
+ }
+ 
+ //--View Background Color
+ +(UIColor *)setNavBarTitleColor{
+ 
+ return UIColorFromRGB(0X518BD5);
+ }
+ 
+ */
 
 
 //--AlertView
@@ -35,7 +35,7 @@
     if ([msg isKindOfClass:[NSNull class]]) {
         [[[UIAlertView alloc]initWithTitle:title message:@"No Data" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
     }else{
-    [[[UIAlertView alloc]initWithTitle:title message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
+        [[[UIAlertView alloc]initWithTitle:title message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
     }
 }
 
@@ -72,8 +72,8 @@
     titleLable.text = title;
     titleLable.textColor =color;
     titleLable.backgroundColor =[UIColor clearColor];
-//    titleLable.font=[UIFont fontWithName:KLightFontStyle size:14];
-     titleLable.font=[UIFont systemFontOfSize:16];
+    //    titleLable.font=[UIFont fontWithName:KLightFontStyle size:14];
+    titleLable.font=[UIFont systemFontOfSize:16];
     return titleLable;
 }
 
@@ -83,26 +83,25 @@
     UITextField *textField =[[UITextField alloc]initWithFrame:rect];
     textField =nil;
     if(textField ==nil){
-      
         textField =[[UITextField alloc]initWithFrame:rect];
     }
     
-//    textField.attributedPlaceholder =
-//    [[NSAttributedString alloc]
-//     initWithString:placeHolderText
-//     attributes:@{NSForegroundColorAttributeName:KTextFieldPlaceholderColor}];
-  
+    //    textField.attributedPlaceholder =
+    //    [[NSAttributedString alloc]
+    //     initWithString:placeHolderText
+    //     attributes:@{NSForegroundColorAttributeName:KTextFieldPlaceholderColor}];
+    
     textField.text = title;
     textField.textColor =color;
     textField.backgroundColor =[UIColor clearColor];
-  //  textField.font=[UIFont fontWithName:KMediumFontStyle size:16];
+    //  textField.font=[UIFont fontWithName:KMediumFontStyle size:16];
     textField.font=[UIFont systemFontOfSize:16];
-
+    
     textField.borderStyle = UITextBorderStyleNone;
     textField.autocapitalizationType = NO;
     textField.autocorrectionType = NO;
     textField.userInteractionEnabled = YES;
-
+    
     UIView *leftViewAdd = [[UIView alloc]initWithFrame:CGRectMake(35, 5, 10, 35)];
     textField.leftView = leftViewAdd;
     textField.leftViewMode = UITextFieldViewModeAlways;
@@ -124,10 +123,10 @@
         textField =[[UITextField alloc]initWithFrame:rect];
     }
     
-   // textField.attributedPlaceholder =
-//    [[NSAttributedString alloc]
-//     initWithString:placeHolderText
-//     attributes:@{NSForegroundColorAttributeName:KTextFieldPlaceholderColor}];
+    // textField.attributedPlaceholder =
+    //    [[NSAttributedString alloc]
+    //     initWithString:placeHolderText
+    //     attributes:@{NSForegroundColorAttributeName:KTextFieldPlaceholderColor}];
     
     textField.text = title;
     textField.textColor =color;
@@ -168,11 +167,11 @@
     button.backgroundColor =[UIColor clearColor];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:color forState:UIControlStateNormal];
-//    [button.titleLabel setFont:[UIFont fontWithName:KBoldFontStyle size:[fontsize intValue]]];
+    //    [button.titleLabel setFont:[UIFont fontWithName:KBoldFontStyle size:[fontsize intValue]]];
     [button.titleLabel setFont:[UIFont systemFontOfSize:16]];
     [button setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
- //    [button setBackgroundImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
-
+    //    [button setBackgroundImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
+    
     return button;
 }
 
@@ -188,7 +187,7 @@
     
     titileLbl.backgroundColor=[UIColor clearColor];
     titileLbl.textColor=[UIColor whiteColor];
-//    titileLbl.font = [UIFont fontWithName:KBoldFontStyle size:16];
+    //    titileLbl.font = [UIFont fontWithName:KBoldFontStyle size:16];
     titileLbl.font = [UIFont systemFontOfSize:16];
     titileLbl.text = title;
     titileLbl.textAlignment=NSTextAlignmentCenter;
@@ -199,7 +198,7 @@
 
 +(UILabel *)createTitleLabel:(UIView *)view andTitle:(NSString *)title andWidth:(NSInteger)width andTextColor:(UIColor *)color
 {
-
+    
     UILabel *titileLbl=[[UILabel alloc]initWithFrame:CGRectMake((view.frame.size.width-width)/2, 24, width, 40)];
     titileLbl =nil;
     if(titileLbl ==nil){
@@ -209,7 +208,7 @@
     
     titileLbl.backgroundColor=[UIColor clearColor];
     titileLbl.textColor=[UIColor whiteColor];
-//    titileLbl.font = [UIFont fontWithName:KBoldFontStyle size:20];
+    //    titileLbl.font = [UIFont fontWithName:KBoldFontStyle size:20];
     titileLbl.font = [UIFont systemFontOfSize:20];
     titileLbl.text = title;
     titileLbl.textAlignment=NSTextAlignmentCenter;
@@ -218,7 +217,7 @@
 
 //--Create ImageView
 +(UIImageView *)createImgViewForImage:(NSString *)imageName andFrame:(CGRect)frame{
-
+    
     UIImageView *ImgVw =[[UIImageView alloc]initWithFrame:frame];
     ImgVw.image=[UIImage imageNamed:imageName];
     ImgVw.userInteractionEnabled=YES;
@@ -237,9 +236,9 @@
 
 #pragma ImageView with SD webCache
 +(void)setImageUrlString:(NSString *)urlString andImgView:(UIImageView *)imgView andisCircle:(BOOL)iscircle{
-
+    
     NSURL *imgUrl =[[NSURL alloc]initWithString:urlString];
-   // [imgView sd_setImageWithURL:imgUrl placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    // [imgView sd_setImageWithURL:imgUrl placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     NSLog(@"%@",imgUrl);
     if(iscircle){
         imgView.layer.cornerRadius = imgView.frame.size.height/2;
