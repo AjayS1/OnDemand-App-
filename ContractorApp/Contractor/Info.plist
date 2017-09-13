@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Doumees Provider</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIcons</key>
@@ -38,6 +40,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -49,6 +53,8 @@
 	<string>Your Photo is needed for this app</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Your Contact is needed for this app.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2017 Doumees inc. All rights reserved.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Your location is needed for this app</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

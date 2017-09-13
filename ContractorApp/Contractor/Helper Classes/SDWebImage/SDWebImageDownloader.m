@@ -31,8 +31,10 @@ static NSString *const kCompletedCallbackKey = @"completed";
 @implementation SDWebImageDownloader
 
 + (void)initialize {
+    
     // Bind SDNetworkActivityIndicator if available (download it here: http://github.com/rs/SDNetworkActivityIndicator )
     // To use it, just add #import "SDNetworkActivityIndicator.h" in addition to the SDWebImage import
+    
     if (NSClassFromString(@"SDNetworkActivityIndicator")) {
 
 #pragma clang diagnostic push
@@ -43,20 +45,23 @@ static NSString *const kCompletedCallbackKey = @"completed";
         // Remove observer in case it was previously added.
         [[NSNotificationCenter defaultCenter] removeObserver:activityIndicator name:SDWebImageDownloadStartNotification object:nil];
         [[NSNotificationCenter defaultCenter] removeObserver:activityIndicator name:SDWebImageDownloadStopNotification object:nil];
-
+        
         [[NSNotificationCenter defaultCenter] addObserver:activityIndicator
                                                  selector:NSSelectorFromString(@"startActivity")
                                                      name:SDWebImageDownloadStartNotification object:nil];
+        
         [[NSNotificationCenter defaultCenter] addObserver:activityIndicator
                                                  selector:NSSelectorFromString(@"stopActivity")
                                                      name:SDWebImageDownloadStopNotification object:nil];
     }
 }
 
-+ (SDWebImageDownloader *)sharedDownloader {
++ (SDWebImageDownloader *)sharedDownloader
+{
     static dispatch_once_t once;
     static id instance;
-    dispatch_once(&once, ^{
+    dispatch_once(&once, ^
+    {
         instance = [self new];
     });
     return instance;

@@ -605,6 +605,7 @@ static NSString *isPrimaryPhotoOrNot;
                         [[AlertView sharedManager] presentAlertWithTitle:@"" message:[responseObject objectForKey:@"Message"]
                                                      andButtonsWithTitle:@[@"OK"] onController:self
                                                            dismissedWith:^(NSInteger index, NSString *buttonTitle) {
+                                                                primarySlectedValue = NO;
                                                                [self userListPhotoAPICall];
                                                                
                                                            }];
@@ -732,7 +733,7 @@ static NSString *isPrimaryPhotoOrNot;
         fileName =[NSString stringWithFormat:@"%@",imageName];
         fileData =UIImageJPEGRepresentation(croppedImage, 1.0);
         mimeType =@"image/jpeg";
-        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@&picName=%@",@"http://doumees.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserImageUpdate",imageName,defaultImage];
+        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@&picName=%@",@"http://api.doumees.com/api/ImgaeUploader/Post",userIdStr,@"UserImageUpdate",imageName,defaultImage];
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
         ;
@@ -1108,7 +1109,7 @@ static NSString *isPrimaryPhotoOrNot;
             //    NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&isPrimary=%@&Type=%@&PicName=%@",@"http://ondemandapinew.flexsin.in/api/ImgaeUploader/Post",userIdStr,isPrimary,@"UserImageUpdate",imageName];
             //"http://doumeesApi.flexsin.in/API/"
             
-            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@&picName=%@",@"http://doumees.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserImageUpdate",imageName,defaultImage];
+            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@&picName=%@",@"http://api.doumees.com/api/ImgaeUploader/Post",userIdStr,@"UserImageUpdate",imageName,defaultImage];
             
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
@@ -1168,7 +1169,7 @@ static NSString *isPrimaryPhotoOrNot;
             fileData = UIImageJPEGRepresentation(img, 1.0);
             mimeType =@"image/jpeg";
             //    NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&isPrimary=%@&Type=%@&PicName=%@",@"http://ondemandapinew.flexsin.in/api/ImgaeUploader/Post",userIdStr,isPrimary,@"UserImageUpdate",imageName];
-            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@",@"http://doumees.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserImage",imageName];
+            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@",@"http://api.doumees.com/api/ImgaeUploader/Post",userIdStr,@"UserImage",imageName];
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
             ;

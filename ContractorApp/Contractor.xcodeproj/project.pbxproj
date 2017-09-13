@@ -1464,8 +1464,8 @@
 				823AE3611D6423D400C447E8 /* LCTabBarBadge.m */,
 				823AE3621D6423D400C447E8 /* LCTabBarCONST.h */,
 				823AE3631D6423D400C447E8 /* LCTabBarController.bundle */,
-				823AE3641D6423D400C447E8 /* LCTabBarController.h */,
 				823AE3651D6423D400C447E8 /* LCTabBarController.m */,
+				823AE3641D6423D400C447E8 /* LCTabBarController.h */,
 				823AE3661D6423D400C447E8 /* LCTabBarItem.h */,
 				823AE3671D6423D400C447E8 /* LCTabBarItem.m */,
 			);
@@ -3006,10 +3006,10 @@
 					"\"SystemConfiguration\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rubik.contractor;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.doumees.Doumees-Provider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4e3974fe-9676-4e30-a457-e66ed54714ab";
-				PROVISIONING_PROFILE_SPECIFIER = Contractor_Dis_Prov;
+				PROVISIONING_PROFILE = "7e3e8919-4755-4c1e-bc94-9b701195b0db";
+				PROVISIONING_PROFILE_SPECIFIER = "Doumees-Provider_Distribution";
 			};
 			name = Debug;
 		};
@@ -3051,10 +3051,10 @@
 					"\"SystemConfiguration\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rubik.contractor;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.doumees.Doumees-Provider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4e3974fe-9676-4e30-a457-e66ed54714ab";
-				PROVISIONING_PROFILE_SPECIFIER = Contractor_Dis_Prov;
+				PROVISIONING_PROFILE = "7e3e8919-4755-4c1e-bc94-9b701195b0db";
+				PROVISIONING_PROFILE_SPECIFIER = "Doumees-Provider_Distribution";
 			};
 			name = Release;
 		};

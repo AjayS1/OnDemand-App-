@@ -95,7 +95,7 @@
         return;
     }
     if (_isFromCreditCardProcess) {
-        _isFromAddBankAccountProcess = NO;
+        _isFromCreditCardProcess = NO;
         PaymentMethodsViewController *paymentInfoView = [self.storyboard instantiateViewControllerWithIdentifier:@"paymentMethod"];
         [self.navigationController pushViewController:paymentInfoView animated:NO];
         return;

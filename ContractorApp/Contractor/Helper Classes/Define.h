@@ -5,41 +5,49 @@
 #ifndef Define_h
 #define Define_h
 #define NSLog if(1) NSLog
-//if you dont want log set 1 as 0.
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 #define BaseUrl @"www.google.com"
 #define BaseServerUrl @"http://www.ondemandapi.flexsin.in/API/"
 
 //#define NewBaseServerUrl @"http://ondemandapinew.flexsin.in/API/"
 //#define NewBaseQAServerUrl @"http://ondemandapinew.flexsin.in/API/"
+
 //#define NewBaseQAServerUrl @"http://ondemandapiqa.flexsin.in/API/"
 //#define NewBaseServerUrl @"http://ondemandapiqa.flexsin.in/API/"
 //#define SignalRBaseUrl @"http://ondemandapiqa.flexsin.in/signalr/hubs"
 //http://doumeesApi.flexsin.in
 
-#define NewBaseQAServerUrl @"http://doumeesApi.flexsin.in/API/"
-#define NewBaseServerUrl     @"http://doumeesApi.flexsin.in/API/"
-#define SignalRBaseUrl          @"http://doumeesApi.flexsin.in/signalr/hubs"
+//Development Base url
+//#define NewBaseQAServerUrl @"http://doumeesApi.flexsin.in/API/"
+//#define NewBaseServerUrl     @"http://doumeesApi.flexsin.in/API/"
+//#define SignalRBaseUrl          @"http://doumeesApi.flexsin.in/signalr/hubs"
+
+//Client Staging Base Url
+#define NewBaseQAServerUrl @"https://api.doumees.com/API/"
+#define NewBaseServerUrl     @"https://api.doumees.com/API/"
+#define SignalRBaseUrl          @"https://api.doumees.com/signalr/hubs"
+
 #define AppName                  @"AppName"
 #define APIAccountLogin        @"Account/AccountLoginNew"
 #define APIContractorSearch  @"Contractor/ContractorSearch"
 #define APIFavouriteUserList  @"Account/ListFavourite"
-#define APIBlockUserList  @"Account/ListBlock"
+#define APIBlockUserList        @"Account/ListBlock"
 #define APIAlertList               @"Account/ListFavourite"
 #define APIAccountUserInfo   @"Account/UserInfo"
 #define APIGetCurrentTimeZone  @"Account/UserGettimeZone"
 #define APIAccountProfileInfo      @"Account/UserProfileInfo"
 #define APIAccountSignout          @"Account/AccountSignOut"
 #define APIUserHeightConversion @"Account/ChangeProfile"
-#define APIUserAttribute @"Account/GetUserAttributeData"
+#define APIUserAttribute              @"Account/GetUserAttributeData"
 #define APIGetPushnotificationSettings       @"Account/ListNotification"
 #define APIUpdatePushnotificationSettings  @"Account/UpdateMobileNotification"
 #define APIEmailNotificationSettings           @"Account/ListNotification"
 #define APIUpdateEmailNotificationSettings @"Account/UpdateEmailNotification"
-#define APIAddCreditCard @"Account/AddCreditCard"
-#define APIPaynowCreditCardVerify @"Customer/VerifyCreditDelinePayment"
-#define APIVerifyCreditCardApiCall @"Account/VerifyCard"
+#define APIAddCreditCard                          @"Account/AddCreditCard"
+#define APIPaynowCreditCardVerify             @"Customer/VerifyCreditDelinePayment"
+#define APIVerifyCreditCardApiCall              @"Account/VerifyCard"
 
 #define APIChangeEmail             @"Account/ChangeEmail"
 #define APIEmailCodeVerify         @"Account/VerifyEmail"

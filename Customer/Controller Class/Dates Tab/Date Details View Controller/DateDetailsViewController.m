@@ -922,9 +922,8 @@
 }
 
 #pragma Mark: Api Methode Call
--(void)sendRequestEndDateApi{
-    
-    
+-(void)sendRequestEndDateApi
+{
 //http://doumeesApi.flexsin.in/API/Customer/RequestToEndDate?userID=Cr0018e7f&DateID=Date202775
 //    Success Response
 //    {
@@ -1056,6 +1055,7 @@
 //                    [notesLabel setFrame:CGRectMake(notesLabel.frame.origin.x, addressLabel.frame.origin.y+addressLabel.frame.size.height+8, notesLabel.frame.size.width, notesLabel.frame.size.height)];
 //                    [notesImageView setFrame:CGRectMake(notesImageView.frame.origin.x+12, notesLabel.frame.origin.y+5, 15, 15)];
                     [dateStatusLabel setFrame:CGRectMake(dateStatusLabel.frame.origin.x, addressLabel.frame.origin.y+addressLabel.frame.size.height+8, dateStatusLabel.frame.size.width, dateStatusLabel.frame.size.height)];
+                    [eventImageView setFrame:CGRectMake(eventImageView.frame.origin.x, dateStatusLabel.frame.origin.y, eventImageView.frame.size.width, eventImageView.frame.size.height)];
                 }
                 else
                 {
@@ -1063,6 +1063,7 @@
                     notesImageView.hidden = NO;
                     [notesLabel setFrame:CGRectMake(notesLabel.frame.origin.x, addressLabel.frame.origin.y+addressLabel.frame.size.height+8, notesLabel.frame.size.width, notesLabel.frame.size.height)];
                     [notesImageView setFrame:CGRectMake(notesImageView.frame.origin.x+12, notesLabel.frame.origin.y+5, 15, 15)];
+                    [eventImageView setFrame:CGRectMake(eventImageView.frame.origin.x, dateStatusLabel.frame.origin.y, eventImageView.frame.size.width, eventImageView.frame.size.height)];
                     [dateStatusLabel setFrame:CGRectMake(dateStatusLabel.frame.origin.x, notesLabel.frame.origin.y+notesLabel.frame.size.height+5, dateStatusLabel.frame.size.width, dateStatusLabel.frame.size.height)];
                 }
                
@@ -1076,7 +1077,7 @@
                       [requestToEndDate setFrame:CGRectMake(requestToEndDate.frame.origin.x, dateStatusLabel.frame.origin.y+dateStatusLabel.frame.size.height+25, requestToEndDate.frame.size.width, requestToEndDate.frame.size.height)];
                 }
                 
-                [eventImageView setFrame:CGRectMake(eventImageView.frame.origin.x+12, dateStatusLabel.frame.origin.y+5, 15, 15)];
+
                 
                 if ([idVerifiedCheck isEqualToString:@"1"]) {
                     

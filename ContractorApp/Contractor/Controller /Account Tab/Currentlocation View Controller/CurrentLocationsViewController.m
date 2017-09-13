@@ -17,7 +17,8 @@
 #define PARAM_PRIDICTION    @"predictions"
 #define GOOGLE_GEOLOCATION_URL @"https://maps.googleapis.com/maps/api/place/autocomplete/"
 #define GOOGLE_API_BASE_URL_DETAIL @"https://maps.googleapis.com/maps/api/place/details/"
-#define GOOGLE_API_KEY   @"AIzaSyDhfdPYj9RhAT0cik2Bt4TaqG9oKsUciwo"
+#define GOOGLE_API_KEY   @"AIzaSyAhPCXBNCtec4Y3PlMMhHZ0SiWQV7FYaEs"
+
 @interface CurrentLocationsViewController () <VSDropdownDelegate>{
     
     SingletonClass *sharedInstance;
@@ -28,9 +29,8 @@
     NSMutableData *receivedData;
     NSMutableArray *placeArray;
     NSString *userLocation;
-
-
 }
+
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicatiorView;
 @end
 

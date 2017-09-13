@@ -83,7 +83,7 @@
     [super viewDidLoad];
     checkTab = NO;
     checkTabSecond = NO;
-    [self setNeedsStatusBarAppearanceUpdate];
+  //  [self setNeedsStatusBarAppearanceUpdate];
     sharedInstance.isFromDateDetailsDateRequest = NO;
 }
 

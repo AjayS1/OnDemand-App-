@@ -54,10 +54,14 @@ static char imageURLKey;
                 if (image && (options & SDWebImageAvoidAutoSetImage) && completedBlock) {
                     completedBlock(image, error, cacheType, url);
                     return;
-                } else if (image) {
+                }
+                else if (image)
+                {
                     wself.image = image;
                     [wself setNeedsLayout];
-                } else {
+                }
+                else
+                {
                     if ((options & SDWebImageDelayPlaceholder)) {
                         wself.image = placeholder;
                         [wself setNeedsLayout];

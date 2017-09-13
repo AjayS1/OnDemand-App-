@@ -127,8 +127,8 @@
     CGFloat titleW = contentRect.size.width;
     CGFloat titleY = contentRect.size.height * self.itemImageRatio + (self.itemImageRatio == 1.0f ? 100.0f : -3.0f);
     CGFloat titleH = contentRect.size.height - titleY;
-    
     return CGRectMake(titleX, titleY, titleW, titleH);
+    
 }
 
 - (void)setHighlighted:(BOOL)highlighted {}

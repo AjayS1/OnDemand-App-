@@ -595,7 +595,7 @@
             else
             {
                 if ( [dateReadType isEqualToString:@"0"]) {
-                    cell.notificationCountLbl.hidden = NO;
+                    cell.notificationCountLbl.hidden = YES;
                     cell.notificationCountLbl.layer.cornerRadius=cell.notificationCountLbl.frame.size.height/2;
                     cell.notificationCountLbl.layer.masksToBounds = YES;
                 }
@@ -730,11 +730,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSString *sectionTitle = [animalSectionTitles objectAtIndex:indexPath.section] ;
-    NSArray *sectionData = [animals objectForKey:sectionTitle];
-   
-
-    if (checkSegmentIndexValue == 0) {
+     
+    if (checkSegmentIndexValue == 0)
+    {
         if (pendingDateArray.count) {
             
             NSString *dateStatusType =  [NSString stringWithFormat:@"%@",[[pendingDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"]];

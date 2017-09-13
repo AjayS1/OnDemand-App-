@@ -23,7 +23,6 @@
 
 #import "AFHTTPRequestOperationManager.h"
 #import "AFHTTPRequestOperation.h"
-
 #import <Availability.h>
 #import <Security/Security.h>
 
@@ -45,9 +44,12 @@
     return [self initWithBaseURL:nil];
 }
 
-- (instancetype)initWithBaseURL:(NSURL *)url {
+- (instancetype)initWithBaseURL:(NSURL *)url
+{
     self = [super init];
-    if (!self) {
+    
+    if (!self)
+    {
         return nil;
     }
 
@@ -99,7 +101,9 @@
 {
     NSError *serializationError = nil;
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:&serializationError];
+    
     if (serializationError) {
+        
         if (failure) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"
@@ -108,7 +112,6 @@
             });
 #pragma clang diagnostic pop
         }
-
         return nil;
     }
 
@@ -183,6 +186,7 @@
 {
     NSError *serializationError = nil;
     NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters constructingBodyWithBlock:block error:&serializationError];
+    
     if (serializationError) {
         if (failure) {
 #pragma clang diagnostic push
@@ -192,14 +196,12 @@
             });
 #pragma clang diagnostic pop
         }
-
         return nil;
     }
 
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
 
     [self.operationQueue addOperation:operation];
-
     return operation;
 }
 
@@ -209,9 +211,7 @@
                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithHTTPMethod:@"PUT" URLString:URLString parameters:parameters success:success failure:failure];
-
     [self.operationQueue addOperation:operation];
-
     return operation;
 }
 

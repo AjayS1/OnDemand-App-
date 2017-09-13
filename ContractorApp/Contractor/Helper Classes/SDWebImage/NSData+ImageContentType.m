@@ -31,7 +31,6 @@
             if ([testString hasPrefix:@"RIFF"] && [testString hasSuffix:@"WEBP"]) {
                 return @"image/webp";
             }
-
             return nil;
     }
     return nil;

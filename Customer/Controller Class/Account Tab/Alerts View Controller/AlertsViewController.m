@@ -210,68 +210,59 @@
 
 - (void)fetchAlertListApiData {
     
-    //  NSString *userIdStr = [[NSUserDefaults standardUserDefaults]objectForKey:@"USERIDDATA"];
-    
     NSString *userIdStr = sharedInstance.userId;
-    
     NSString *urlstr=[NSString stringWithFormat:@"%@?CustomerID=%@",APIContractorAlertList,userIdStr];
     NSString *encodedUrl = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
     [ProgressHUD show:@"Please wait..." Interaction:NO];
-    
     [ServerRequest AFNetworkPostRequestUrlForAddNewApiForQA:encodedUrl withParams:nil CallBack:^(id responseObject, NSError *error) {
         NSLog(@"response object Get UserInfo List %@",responseObject);
+    [ProgressHUD dismiss];
         
-        [ProgressHUD dismiss];
-        
-        if(!error){
-            
+        if(!error)
+        {
             NSLog(@"Response is --%@",responseObject);
-            
-            if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1) {
-                
+            if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1)
+            {
                 NSDictionary *resultDict = [responseObject objectForKey:@"result"];
-                
                 userAlertDataArray =[[resultDict objectForKey:@"UserAlertList"] mutableCopy];
-                if (userAlertDataArray.count) {
+                
+                if (userAlertDataArray.count)
+                {
                     [self.view setBackgroundColor:[UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0]];
                     [self.dontHaveLabel setHidden:YES];
                     [self.alertImageView setHidden:YES];
                     [alertTableView setHidden:NO];
 
                 }
-                else{
-                    [self.view setBackgroundColor:[UIColor whiteColor]];
+                else
+                {
+                    //[self.view setBackgroundColor:[UIColor whiteColor]];
                     [self.dontHaveLabel setHidden:NO];
                     [self.alertImageView setHidden:NO];
                     [alertTableView setHidden:YES];
-
-                }                [alertTableView reloadData];
+                }
+                
+                [alertTableView reloadData];
                 
             }
             
-            else if (([[responseObject objectForKey:@"StatusCode"] intValue] == 2)){
+            else if (([[responseObject objectForKey:@"StatusCode"] intValue] == 2))
+            {
+                
                 if (userAlertDataArray.count) {
                     [self.view setBackgroundColor:[UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0]];
                     [self.dontHaveLabel setHidden:YES];
                     [alertTableView setHidden:NO];
                     [self.alertImageView setHidden:YES];
                 }
-                else{
-                    [self.view setBackgroundColor:[UIColor whiteColor]];
+                else
+                {
                     [self.dontHaveLabel setHidden:NO];
                     [alertTableView setHidden:YES];
                     [self.alertImageView setHidden:NO];
                 }
-                
-            }
-            else {
-                
                 [CommonUtils showAlertWithTitle:@"Alert!" withMsg:[responseObject objectForKey:@"Message"] inController:self];
             }
-        } else {
-            
-            NSLog(@"Error");
         }
     }];
 }

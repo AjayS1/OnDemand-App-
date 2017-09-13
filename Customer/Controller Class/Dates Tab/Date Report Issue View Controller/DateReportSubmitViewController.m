@@ -34,7 +34,7 @@
         [APPDELEGATE.hubConnection  reconnecting];
     }
     sharedInstance = [SingletonClass sharedInstance];
-
+    
 }
 
 
@@ -157,13 +157,7 @@
                              if ([buttonTitle isEqualToString:@"OK"]) {
                                  [APPDELEGATE.tabBarC.tabBar setHidden:YES];
                                  [self tabBarControllerClass];
-                                 
-                                 //                                 DatesViewController *datesView = [self.storyboard instantiateViewControllerWithIdentifier:@"dates"];
-                                 //                                 [self.navigationController pushViewController:datesView animated:YES];
                              }}];
-                        
-                        // [self.navigationController popViewControllerAnimated:YES];
-                        
                     }
                     else {
                         [CommonUtils showAlertWithTitle:@"Alert!" withMsg:[responseObject objectForKey:@"Message"] inController:self];
@@ -192,14 +186,11 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SearchViewController *searchScreenView = [storyboard instantiateViewControllerWithIdentifier:@"search"];
-    //searchScreenView.view.backgroundColor = [UIColor whiteColor];
     searchScreenView.title = @"Search";
     searchScreenView.tabBarItem.image = [UIImage imageNamed:@"search"];
     searchScreenView.tabBarItem.selectedImage = [UIImage imageNamed:@"search_hover"];
     
     DatesViewController *datesView = [storyboard instantiateViewControllerWithIdentifier:@"dates"];
-    //datesView.view.backgroundColor = [UIColor colorWithRed:241.0/255 green:241.0/255 blue:241.0/255 alpha:1.0];
-    // datesView.tabBarItem.badgeValue = dateCountStr;
     datesView.title = @"Dates";
     datesView.isFromDateDetails = NO;
     datesView.tabBarItem.image = [UIImage imageNamed:@"dates"];
@@ -207,14 +198,12 @@
     
     MessagesViewController *messageView = [storyboard instantiateViewControllerWithIdentifier:@"messages"];
     messageView.view.backgroundColor = [UIColor colorWithRed:241.0/255 green:241.0/255 blue:241.0/255 alpha:1.0];
-    //  messageView.tabBarItem.badgeValue =messageCountStr;
     messageView.title = @"Messages";
     messageView.tabBarItem.image = [UIImage imageNamed:@"message"];
     messageView.tabBarItem.selectedImage = [UIImage imageNamed:@"message_hover"];
     
     NotificationsViewController *notiView = [storyboard instantiateViewControllerWithIdentifier:@"notifications"];
     notiView.view.backgroundColor = [UIColor colorWithRed:241.0/255 green:241.0/255 blue:241.0/255 alpha:1.0];
-    // notiView.tabBarItem.badgeValue = notificationsCountStr;
     notiView.title = @"Notifications";
     notiView.tabBarItem.image = [UIImage imageNamed:@"notification"];
     notiView.tabBarItem.selectedImage = [UIImage imageNamed:@"notification_hover"];

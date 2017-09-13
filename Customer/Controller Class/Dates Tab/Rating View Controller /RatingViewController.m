@@ -147,6 +147,8 @@
             {
                 NSLog(@"Response is --%@",responseObject);
                 if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1) {
+                    [[NSUserDefaults standardUserDefaults] setValue:@"10" forKey:@"requestToEndDateValue"];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
 //                    [[AlertView sharedManager] presentAlertWithTitle:@"Alert!" message:[responseObject objectForKey:@"Message"]
 //                                                 andButtonsWithTitle:@[@"Ok"] onController:self
 //                                                       dismissedWith:^(NSInteger index, NSString *buttonTitle) {

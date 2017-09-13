@@ -8,7 +8,6 @@
 
 #import "LCTabBar.h"
 #import "LCTabBarItem.h"
-
 @interface LCTabBar ()
 
 @end
@@ -18,7 +17,6 @@
 - (NSMutableArray *)tabBarItems {
     
     if (_tabBarItems == nil) {
-        
         _tabBarItems = [[NSMutableArray alloc] init];
     }
     return _tabBarItems;
@@ -32,19 +30,14 @@
     tabBarItem.itemTitleFont          = self.itemTitleFont;
     tabBarItem.itemTitleColor         = self.itemTitleColor;
     tabBarItem.selectedItemTitleColor = self.selectedItemTitleColor;
-    
     tabBarItem.tabBarItemCount = self.tabBarItemCount;
-    
     tabBarItem.tabBarItem = item;
-    
     [tabBarItem addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchDown];
     
     [self addSubview:tabBarItem];
-    
     [self.tabBarItems addObject:tabBarItem];
     
     if (self.tabBarItems.count == 1) {
-        
         [self buttonClick:tabBarItem];
     }
 }
@@ -52,7 +45,6 @@
 - (void)buttonClick:(LCTabBarItem *)tabBarItem {
     
     if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedItemFrom:to:)]) {
-        
         [self.delegate tabBar:self didSelectedItemFrom:self.selectedItem.tabBarItem.tag to:tabBarItem.tag];
     }
     

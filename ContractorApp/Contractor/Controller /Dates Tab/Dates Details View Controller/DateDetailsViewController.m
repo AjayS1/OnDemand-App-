@@ -83,6 +83,29 @@
     [confirmButton setHidden:YES];
     [startDateButton setHidden:YES];
     [endDateButton setHidden:YES];
+    if (WIN_WIDTH == 320) {
+        [dateInfoButton setFrame:CGRectMake(dateInfoButton.frame.origin.x, dateInfoButton.frame.origin.y,  self.view.frame.size.width/2, dateInfoButton.frame.size.height)];
+        
+        dateBottomlineView = [[UIView alloc] initWithFrame:CGRectMake(0, dateInfoButton.frame.size.height+3.5, self.view.frame.size.width/2, 3)];
+        dateBottomlineView.backgroundColor = [UIColor purpleColor];
+        [dateInfoButton addSubview:dateBottomlineView];
+        [profileButton setFrame:CGRectMake(dateInfoButton.frame.origin.x+dateInfoButton.frame.size.width+0, profileButton.frame.origin.y,  self.view.frame.size.width/2+20, profileButton.frame.size.height)];
+        profileBottomlineView = [[UIView alloc] initWithFrame:CGRectMake(-10, profileButton.frame.size.height+3.5, profileButton.frame.size.width, 3)];
+        profileBottomlineView.backgroundColor = [UIColor purpleColor];
+        [profileButton addSubview:profileBottomlineView];
+        
+    }
+    else{
+        [dateInfoButton setFrame:CGRectMake(dateInfoButton.frame.origin.x, dateInfoButton.frame.origin.y,  self.view.frame.size.width/2, dateInfoButton.frame.size.height)];
+        dateBottomlineView = [[UIView alloc] initWithFrame:CGRectMake(0, dateInfoButton.frame.size.height+3.5, dateInfoButton.frame.size.width, 3)];
+        dateBottomlineView.backgroundColor = [UIColor purpleColor];
+        [dateInfoButton addSubview:dateBottomlineView];
+        [profileButton setFrame:CGRectMake(dateInfoButton.frame.origin.x+dateInfoButton.frame.size.width+0, profileButton.frame.origin.y,  self.view.frame.size.width/2+20, profileButton.frame.size.height)];
+        profileBottomlineView = [[UIView alloc] initWithFrame:CGRectMake(0, profileButton.frame.size.height+3.5, profileButton.frame.size.width, 3)];
+        profileBottomlineView.backgroundColor = [UIColor purpleColor];
+        [profileButton addSubview:profileBottomlineView];
+        
+    }
     
     // [notesLabel setFrame:CGRectMake(66, 103, 285, 21)];
 }
@@ -133,29 +156,7 @@
     profileView.hidden = YES;
     dateInforamtionView.hidden = NO;
     
-    if (WIN_WIDTH == 320) {
-        [dateInfoButton setFrame:CGRectMake(dateInfoButton.frame.origin.x, dateInfoButton.frame.origin.y,  self.view.frame.size.width/2, dateInfoButton.frame.size.height)];
 
-        dateBottomlineView = [[UIView alloc] initWithFrame:CGRectMake(0, dateInfoButton.frame.size.height+3.5, self.view.frame.size.width/2, 3)];
-        dateBottomlineView.backgroundColor = [UIColor purpleColor];
-        [dateInfoButton addSubview:dateBottomlineView];
-        [profileButton setFrame:CGRectMake(dateInfoButton.frame.origin.x+dateInfoButton.frame.size.width+0, profileButton.frame.origin.y,  self.view.frame.size.width/2+20, profileButton.frame.size.height)];
-        profileBottomlineView = [[UIView alloc] initWithFrame:CGRectMake(-10, profileButton.frame.size.height+3.5, profileButton.frame.size.width, 3)];
-        profileBottomlineView.backgroundColor = [UIColor purpleColor];
-        [profileButton addSubview:profileBottomlineView];
-
-    }
-    else{
-        [dateInfoButton setFrame:CGRectMake(dateInfoButton.frame.origin.x, dateInfoButton.frame.origin.y,  self.view.frame.size.width/2, dateInfoButton.frame.size.height)];
-        dateBottomlineView = [[UIView alloc] initWithFrame:CGRectMake(0, dateInfoButton.frame.size.height+3.5, dateInfoButton.frame.size.width, 3)];
-        dateBottomlineView.backgroundColor = [UIColor purpleColor];
-        [dateInfoButton addSubview:dateBottomlineView];
-          [profileButton setFrame:CGRectMake(dateInfoButton.frame.origin.x+dateInfoButton.frame.size.width+0, profileButton.frame.origin.y,  self.view.frame.size.width/2+20, profileButton.frame.size.height)];
-        profileBottomlineView = [[UIView alloc] initWithFrame:CGRectMake(0, profileButton.frame.size.height+3.5, profileButton.frame.size.width, 3)];
-        profileBottomlineView.backgroundColor = [UIColor purpleColor];
-        [profileButton addSubview:profileBottomlineView];
-
-    }
     //[dateInfoButton setBackgroundColor:[UIColor redColor]];
     [_seperatorView setFrame:CGRectMake(0, dateInfoButton.frame.size.height + dateInfoButton.frame.origin.y+6, self.view.frame.size.width, 1)];
     [dateInfoButton setBackgroundColor:[UIColor clearColor]];
@@ -765,6 +766,7 @@
     dateInforamtionView.hidden = NO;
     dateBottomlineView.hidden = NO;
     profileBottomlineView.hidden = YES;
+  //  [profileBottomlineView removeFromSuperview];
     profileBottomlineView.backgroundColor = [UIColor clearColor];
     dateBottomlineView.backgroundColor = [UIColor purpleColor];
 
@@ -1686,7 +1688,8 @@
         }];
         
     }
-    else{
+    else
+    {
         
         [timer invalidate];
         DateCancelViewController *dateReportView = [self.storyboard instantiateViewControllerWithIdentifier:@"dateCancel"];
@@ -1726,6 +1729,7 @@
                 
                 if ([self.dateTypeStr isEqualToString:@"1"]) {
                     [timer invalidate];
+                    
                     DateCancelViewController *dateReportView = [self.storyboard instantiateViewControllerWithIdentifier:@"dateCancel"];
                     dateReportView.self.dateIdStr = self.dateIdStr;
                     dateReportView.self.dateDiclineOrDateCancelStr = @"Date Decline";
@@ -1750,6 +1754,7 @@
                     dateReportView.self.titleStr =@"CANCEL DATE";
                     dateReportView.buttonSattus = buttonStatus;
                     dateReportView.dateTypeStr = self.dateTypeStr;
+                    
                     if(self.isFromOnDemandRequest)
                     {
                         sharedInstance.isFromMessageCancelDetails = TRUE;

@@ -19,7 +19,6 @@
 #import "AppDelegate.h"
 
 @interface MobilePhoneViewController (){
-    
     NSArray *titleArray;
     NSArray *dataArray;
     NSString *firstNameStr;
@@ -35,6 +34,7 @@
     NSDate *convertDate;
     NSMutableArray *tabledataArray;
 }
+
 @property (weak, nonatomic) IBOutlet UITableView *mobilePhoneTableView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
@@ -53,19 +53,25 @@
     if (APPDELEGATE.hubConnection) {
         [APPDELEGATE.hubConnection  reconnecting];
     }
+    
     sharedInstance = [SingletonClass sharedInstance];
     userIdStr = sharedInstance.userId;
+    
     if (_isMobilePhoneSelected) {
         [self.titleLabel setText:@"MOBILE NUMBER"];
         
     }
-    else{
+    else
+    {
         [self.titleLabel setText:@"PREFERENCES"];
     }
+    
     [self fetchUserInfoApiData ];
+    
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.navigationController.navigationBar.hidden=YES;
     [self.tabBarController.tabBar setHidden:YES];
+    
     tabledataArray = [[NSMutableArray alloc]init];
     sharedInstance = [SingletonClass sharedInstance];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -88,8 +94,6 @@
     titleArray = @[@"Email",@"Password",@"First Name",@"Last Name",@"Date of Birth",@"I am a",@"I am interested in",@"Mobile Number"];
     dataArray = @[emailStr,passwordStr,firstNameStr,lastNameStr,dateOfBirthStr,genderStr,interestedInStr,mobileNumberStr];
     _mobilePhoneTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    
 }
 
 #pragma mark - Table view data source

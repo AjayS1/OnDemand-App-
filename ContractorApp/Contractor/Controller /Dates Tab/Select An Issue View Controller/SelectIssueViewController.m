@@ -10,10 +10,11 @@
 #import "DateReportSubmitViewController.h"
 #import "ServerRequest.h"
 #import "AppDelegate.h"
+
 @interface SelectIssueViewController () {
-    
     SingletonClass *sharedInstance;
 }
+
 @end
 
 @implementation SelectIssueViewController

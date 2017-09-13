@@ -3530,10 +3530,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rubik.customer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doumees.Doumees;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2f4a2fe0-1e80-4c63-96cc-c73ae3122687";
-				PROVISIONING_PROFILE_SPECIFIER = Customer_Dis_Prov;
+				PROVISIONING_PROFILE = "9541eeed-ec6c-4b85-a64b-4a4b400f0852";
+				PROVISIONING_PROFILE_SPECIFIER = Doumees_Distribution;
 			};
 			name = Debug;
 		};
@@ -3563,10 +3563,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rubik.customer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doumees.Doumees;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2f4a2fe0-1e80-4c63-96cc-c73ae3122687";
-				PROVISIONING_PROFILE_SPECIFIER = Customer_Dis_Prov;
+				PROVISIONING_PROFILE = "9541eeed-ec6c-4b85-a64b-4a4b400f0852";
+				PROVISIONING_PROFILE_SPECIFIER = Doumees_Distribution;
 			};
 			name = Release;
 		};

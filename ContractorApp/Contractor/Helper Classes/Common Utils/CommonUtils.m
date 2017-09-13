@@ -7,28 +7,6 @@
 
 @implementation CommonUtils
 
-/*
- //--View Background Color
- +(UIColor *)setBgColor{
- 
- return UIColorFromRGB(0X044E82);
- }
- 
- //--View Background Color
- +(UIColor *)setNavBarBgColor{
- 
- return UIColorFromRGB(0XD22C3B);
- }
- 
- //--View Background Color
- +(UIColor *)setNavBarTitleColor{
- 
- return UIColorFromRGB(0X518BD5);
- }
- 
- */
-
-
 //--AlertView
 +(void)showAlertWithTitle:(NSString *)title withMsg:(NSString *)msg inController:(UIViewController *)controller
 {
@@ -137,7 +115,6 @@
 
 +(NSString *)getFormateedNumberWithValue:(NSString *)value{
     
-    
     NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
     numberFormatter.numberStyle = kCFNumberFormatterCurrencyStyle;
     numberFormatter.lenient = YES;
@@ -147,11 +124,9 @@
     [formatter setLocale:[NSLocale currentLocale]];
     NSString *localizedMoneyString = [formatter stringFromNumber:number];
     NSLog(@"Formatted Value in Currency %@",localizedMoneyString);
+    
     return localizedMoneyString;
 }
-
-
-
 
 //--Create UIButton
 +(UIButton *)createButtonWithRect :(CGRect)rect andText :(NSString *)title andTextColor:(UIColor *)color andFontSize:(NSString *)fontsize andImgName:(NSString *)imgName{
@@ -180,18 +155,15 @@
     
     UILabel *titileLbl=[[UILabel alloc]initWithFrame:CGRectMake((view.frame.size.width-width)/2, 24, width, 40)];
     titileLbl =nil;
-    if(titileLbl ==nil){
-        
+    if(titileLbl ==nil)
+    {
         titileLbl = [[UILabel alloc]initWithFrame:CGRectMake((view.frame.size.width-width)/2, 24, width, 40)];
     }
-    
     titileLbl.backgroundColor=[UIColor clearColor];
     titileLbl.textColor=[UIColor whiteColor];
-    //    titileLbl.font = [UIFont fontWithName:KBoldFontStyle size:16];
     titileLbl.font = [UIFont systemFontOfSize:16];
     titileLbl.text = title;
     titileLbl.textAlignment=NSTextAlignmentCenter;
-    
     return titileLbl;
 }
 
@@ -201,14 +173,14 @@
     
     UILabel *titileLbl=[[UILabel alloc]initWithFrame:CGRectMake((view.frame.size.width-width)/2, 24, width, 40)];
     titileLbl =nil;
-    if(titileLbl ==nil){
-        
+    if(titileLbl ==nil)
+    {
         titileLbl = [[UILabel alloc]initWithFrame:CGRectMake((view.frame.size.width-width)/2, 24, width, 40)];
     }
     
     titileLbl.backgroundColor=[UIColor clearColor];
     titileLbl.textColor=[UIColor whiteColor];
-    //    titileLbl.font = [UIFont fontWithName:KBoldFontStyle size:20];
+    //titileLbl.font = [UIFont fontWithName:KBoldFontStyle size:20];
     titileLbl.font = [UIFont systemFontOfSize:20];
     titileLbl.text = title;
     titileLbl.textAlignment=NSTextAlignmentCenter;
@@ -252,6 +224,9 @@ NSString * imageToNSString (UIImage *image ){
     NSString *imageStr = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return (imageStr.length) ? imageStr: @"";
 }
+
+
+
 
 #pragma Change Date to utc date
 -(NSString *)getUTCFormateDate:(NSDate *)localDate

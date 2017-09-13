@@ -5,7 +5,7 @@
 //  Copyright © 2016 Jamshed Ali. All rights reserved.
 
 #import "CreditCardViewController.h"
-#define APPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
 #import "SingletonClass.h"
 #import "DropDownListView.h"
 #import "TESignatureView.h"
@@ -14,7 +14,8 @@
 #import "ServerRequest.h"
 #import "AlertView.h"
 #import "CreditCardVerificationViewController.h"
-
+#define WIN_WIDTH              [[UIScreen mainScreen]bounds].size.width
+#define APPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
 @interface CreditCardViewController ()<kDropDownListViewDelegate> {
     NSMutableArray *monthsArray;
     NSMutableArray *yearsArray;
@@ -408,7 +409,13 @@
 
 -(void)viewDidLayoutSubviews
 {
-    bgScrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+700);
+    if (WIN_WIDTH == 320){
+        bgScrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+900);
+    }
+    else
+    {
+        bgScrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+700);
+    }
 }
 - (void)setBorderlayerOnTextField {
     

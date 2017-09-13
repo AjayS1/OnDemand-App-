@@ -18,7 +18,6 @@
     NSString *userName;
     NSString *userNameBy;
     NSString *totalPaidAmount;
-
 }
 
 @end
@@ -163,8 +162,6 @@
     {
         chargeBreakDownView.hidden = YES;
     }
-   // [chargeBreakDownView  setBackgroundColor:[UIColor greenColor]];
-    
     [self dateDetailsApiCall];
 }
 
@@ -182,16 +179,16 @@
     
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.navigationController.navigationBar.hidden=YES;
-    
     userNameLabel.text =  self.userNameStr;
     NSString *setPrimaryImageUrlStr =  [NSString stringWithFormat:@"%@",self.picUrlStr];
     NSURL *imageUrl = [NSURL URLWithString:setPrimaryImageUrlStr];
     [userImage setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"placeholder.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.tabBarController.tabBar setHidden:YES];
-    if (APPDELEGATE.hubConnection) {
+    
+    if (APPDELEGATE.hubConnection)
+    {
         [APPDELEGATE.hubConnection  reconnecting];
     }
-    
     NSString *dateType =   self.dateTypeStr;
     if ([dateType isEqualToString:@"6"]  || [dateType isEqualToString:@"10"] || [dateType isEqualToString:@"19"] || [dateType isEqualToString:@"20"]) {
         if ([_dateRequestType isEqualToString:@"1"]) {
@@ -343,11 +340,9 @@
                     [statusImage setHidden:NO];
                     [ratingImage setHidden:NO];
                     
-          
-                    
                     if(WIN_WIDTH == 320)
                     {
-                        [locationLabel setFrame:CGRectMake(locationLabel.frame.origin.x, locationLabel.frame.origin.y, locationLabel.frame.size.width-25, locationLabel.frame.size.height)];
+                     [locationLabel setFrame:CGRectMake(locationLabel.frame.origin.x, locationLabel.frame.origin.y, locationLabel.frame.size.width-25, locationLabel.frame.size.height)];
                     }
                     
                     NSArray *imageDataArray = [dataDictionary objectForKey:@"UserPicture"];
@@ -473,10 +468,7 @@
                     }
                     else
                     {
-                        //                   if ([[[dataDictionary objectForKey:@"DateDetails"]objectForKey:@"AdditionalDuration"] isKindOfClass:[NSString class]]) {
-                        //                       <#statements#>
-                        //                   }
-                        NSString *additionalTimeStr = [NSString stringWithFormat:@"%@", [[dataDictionary objectForKey:@"DateDetails"]objectForKey:@"AdditionalDuration"] ];
+                            NSString *additionalTimeStr = [NSString stringWithFormat:@"%@", [[dataDictionary objectForKey:@"DateDetails"]objectForKey:@"AdditionalDuration"] ];
                         
                         if ([additionalTimeStr integerValue]>0) {
                             [mainHistoryDetailsView bringSubviewToFront:completeFeeView];
@@ -493,13 +485,7 @@
                                 [cancellationFeeView setHidden:NO];
                             }
                             else{
-                            //    if ([sharedInstance.CancelReasonID isEqualToString:@"56"]) {
-                                //    [cancellationFeeView setHidden:NO];
-
-                              //  }
-                              //  else{
-                                [cancellationFeeView setHidden:YES];
-                             //   }
+                             [cancellationFeeView setHidden:YES];
                             }
                         }
                     }
@@ -559,6 +545,7 @@
                         NSString *reserveDate = [self convertUTCTimeToLocalTime:fileKey WithFormate:@"yyyy-MM-dd'T'HH:mm:ss"];
                         dateStartTimeLabel.text = [NSString stringWithFormat:@"%@",[self changeDateInParticularFormateWithStringForDate:reserveDate WithFormate:@"yyyy-MM-dd HH:mm:ss"]];
                     }
+                    
                     else
                     {
                         dateStartTimeLabel.text = @"";

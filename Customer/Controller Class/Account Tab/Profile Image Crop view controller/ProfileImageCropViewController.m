@@ -251,9 +251,9 @@ static NSString *isPrimaryPhotoOrNot;
             [_deleteButton setHidden:NO];
             [_cropButton setHidden:NO];
             [_cropButtonLayer setHidden:NO];
-
-//            [_cropButton setFrame:_deleteButton.frame];
-//            [_cropButtonLayer setFrame:_deleteButton.frame];
+            
+            //            [_cropButton setFrame:_deleteButton.frame];
+            //            [_cropButtonLayer setFrame:_deleteButton.frame];
             [_arrowImageView setFrame:CGRectMake(_arrowImageView.frame.origin.x, _deleteButton.frame.origin.y+7, _arrowImageView.frame.size.width, _arrowImageView.frame.size.height)];
             
             
@@ -392,7 +392,7 @@ static NSString *isPrimaryPhotoOrNot;
                             primarySlectedValue = YES;
                             NSString *statusValue = [NSString stringWithFormat:@"%@",[dictObj valueForKey:@"Status"]];
                             photoStatus = [statusValue integerValue];
-
+                            
                             if ([statusValue isEqualToString:@"1"])
                             {
                                 [_statusLabel setText:@"Approved"];
@@ -416,9 +416,9 @@ static NSString *isPrimaryPhotoOrNot;
                             [_deleteButton setHidden:NO];
                             [_cropButton setHidden:NO];
                             [_cropButtonLayer setHidden:NO];
-
-                          //  [_cropButton setFrame:_deleteButton.frame];
-                          //  [_cropButtonLayer setFrame:_deleteButton.frame];
+                            
+                            //  [_cropButton setFrame:_deleteButton.frame];
+                            //  [_cropButtonLayer setFrame:_deleteButton.frame];
                             [_arrowImageView setFrame:CGRectMake(_arrowImageView.frame.origin.x, _deleteButton.frame.origin.y+7, _arrowImageView.frame.size.width, _arrowImageView.frame.size.height)];
                             
                             
@@ -431,7 +431,7 @@ static NSString *isPrimaryPhotoOrNot;
                                 NSString *statusValue = [NSString stringWithFormat:@"%@",[dictOfStatus valueForKey:@"Status"]];
                                 photoIdStr = [NSString stringWithFormat:@"%@",[dictOfStatus valueForKey:@"ID"]];
                                 photoStatus = [statusValue integerValue];
-
+                                
                                 if ([statusValue isEqualToString:@"1"])
                                 {
                                     [_statusLabel setText:@"Approved"];
@@ -577,38 +577,41 @@ static NSString *isPrimaryPhotoOrNot;
 - (IBAction)makePrimaryButton:(id)sender {
     
     
-//    if([isPrimary isEqualToString:@"1"]) {
-//        
-//    } else {
+    //    if([isPrimary isEqualToString:@"1"]) {
+    //
+    //    } else {
     
-        if (photoStatus == 1) {
-            NSString *userIdStr = sharedInstance.userId;
-            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&picID=%@&isPrimary=%@",APISetPrimaryPhoto,userIdStr,photoIdStr,@"1"];
-            NSString *encodedUrl = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            [ProgressHUD show:@"Please wait..." Interaction:NO];
-            [ServerRequest AFNetworkPostRequestUrlForQA:encodedUrl withParams:nil CallBack:^(id responseObject, NSError *error) {
-                NSLog(@"response object Get UserInfo List %@",responseObject);
-                [ProgressHUD dismiss];
-                if(!error){
-                    NSLog(@"Response is --%@",responseObject);
-                    if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1) {
-                        [[AlertView sharedManager] presentAlertWithTitle:@"" message:[responseObject objectForKey:@"Message"]
-                                                     andButtonsWithTitle:@[@"OK"] onController:self
-                                                           dismissedWith:^(NSInteger index, NSString *buttonTitle) {
-                                                               [self userListPhotoAPICall];
-                                                               
-                                                           }];
-                    } else {
-                        
-                        [CommonUtils showAlertWithTitle:@"Alert" withMsg:[responseObject objectForKey:@"Message"] inController:self];
-                    }
+    if (photoStatus == 1) {
+        primarySlectedValue = NO;
+        NSString *userIdStr = sharedInstance.userId;
+        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&picID=%@&isPrimary=%@",APISetPrimaryPhoto,userIdStr,photoIdStr,@"1"];
+        NSString *encodedUrl = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [ProgressHUD show:@"Please wait..." Interaction:NO];
+        [ServerRequest AFNetworkPostRequestUrlForQA:encodedUrl withParams:nil CallBack:^(id responseObject, NSError *error) {
+            NSLog(@"response object Get UserInfo List %@",responseObject);
+            [ProgressHUD dismiss];
+            if(!error){
+                NSLog(@"Response is --%@",responseObject);
+                if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1) {
+                    
+                    [[AlertView sharedManager] presentAlertWithTitle:@"" message:[responseObject objectForKey:@"Message"]
+                                                 andButtonsWithTitle:@[@"OK"] onController:self
+                                                       dismissedWith:^(NSInteger index, NSString *buttonTitle) {
+                                                           primarySlectedValue = NO;
+                                                           [self userListPhotoAPICall];
+                                                           
+                                                       }];
+                } else {
+                    
+                    [CommonUtils showAlertWithTitle:@"Alert" withMsg:[responseObject objectForKey:@"Message"] inController:self];
                 }
-            }];
-        }
-        else if (photoStatus == 0)
-        {
-            [CommonUtils showAlertWithTitle:@"Alert" withMsg:@"This photo is in pending state. You can not make it a primary photo." inController:self];
-        }
+            }
+        }];
+    }
+    else if (photoStatus == 0)
+    {
+        [CommonUtils showAlertWithTitle:@"Alert" withMsg:@"This photo is in pending state. You can not make it a primary photo." inController:self];
+    }
     //}
 }
 
@@ -658,38 +661,10 @@ static NSString *isPrimaryPhotoOrNot;
                                        }];
 }
 
-//  NSString *userIdStr = [[NSUserDefaults standardUserDefaults]objectForKey:@"USERIDDATA"];
-//}
 
 - (IBAction)cropbutton:(id)sender {
     
-    
-    //    PECropViewController *controller = [[PECropViewController alloc] init];
-    //    controller.delegate = self;
-    //    controller.image = self.previewImageView.image;
-    //    NSDictionary *dict = [imageDataArray objectAtIndex:imageSelctedIndex];
-    //    NSString *str = [NSString stringWithFormat:@"%@",[dict valueForKey:@"PicName"]];
-    //    //  NSArray *arraySttring = [str componentsSeparatedByString:@"/"];
-    //    // NSArray *arraySttring1 = [[arraySttring lastObject] componentsSeparatedByString:@"/"];
-    //    defaultImage = str;
-    //
-    //    controller.keepingCropAspectRatio = YES;
-    //    controller.cropAspectRatio = 1.0;
-    //    UIImage *imageView = self.previewImageView.image;
-    //    CGFloat width = imageView.size.width;
-    //    CGFloat height = imageView.size.height;
-    //    CGFloat length = MAX(width, height);
-    //    controller.imageCropRect = CGRectMake((width - length) / 2,
-    //                                          (height - length) / 2,
-    //                                          length,
-    //                                          length);
-    //
-    //
-    //    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    //    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-    //        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-    //    }
-    //    [self presentViewController:navigationController animated:YES completion:NULL];
+
     self.croppingStyle = TOCropViewCroppingStyleDefault;
     TOCropViewController *cropController = [[TOCropViewController alloc] initWithCroppingStyle:self.croppingStyle image:self.previewImageView.image];
     cropController.delegate = self;
@@ -697,25 +672,16 @@ static NSString *isPrimaryPhotoOrNot;
     NSDictionary *dict = [imageDataArray objectAtIndex:imageSelctedIndex];
     NSString *str = [NSString stringWithFormat:@"%@",[dict valueForKey:@"PicName"]];
     defaultImage = str;
-    // -- Uncomment these if you want to test out restoring to a previous crop setting --
-    //cropController.angle = 90; // The initial angle in which the image will be rotated
-    //cropController.imageCropFrame = CGRectMake(0,0,2848,4288); //The
-    
-    // -- Uncomment the following lines of code to test out the aspect ratio features --
-    //cropController.aspectRatioPreset = TOCropViewControllerAspectRatioPresetSquare; //Set the initial aspect ratio as a square
+  
     cropController.aspectRatioLockEnabled = YES; // The crop box is locked to the aspect ratio and can't be resized away from it
-    //cropController.resetAspectRatioEnabled = NO; // When tapping 'reset', the aspect ratio will NOT be reset back to default
-    
-    // -- Uncomment this line of code to place the toolbar at the top of the view controller --
-    // cropController.toolbarPosition = TOCropViewControllerToolbarPositionTop;
     sharedInstance.IsCropPhotoDirect = YES;
     self.image = self.previewImageView.image;
     
     //If profile picture, push onto the same navigation stack
     if (self.croppingStyle == TOCropViewCroppingStyleCircular) {
-        //[picker pushViewController:cropController animated:YES];
     }
-    else { //otherwise dismiss, and then present from the main controller
+    else {
+        //otherwise dismiss, and then present from the main controller
         //  [picker dismissViewControllerAnimated:YES completion:^{
         [self presentViewController:cropController animated:YES completion:nil];
         //        }];
@@ -756,7 +722,7 @@ static NSString *isPrimaryPhotoOrNot;
         fileData =UIImageJPEGRepresentation(croppedImage, 1.0);
         mimeType =@"image/jpeg";
         //    NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&isPrimary=%@&Type=%@&PicName=%@",@"http://ondemandapinew.flexsin.in/api/ImgaeUploader/Post",userIdStr,isPrimary,@"UserImageUpdate",imageName];
-        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@&picName=%@",@"http://doumees.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserImageUpdate",imageName,defaultImage];
+        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@&picName=%@",@"http://www.doumees.com/api/ImgaeUploader/Post",userIdStr,@"UserImageUpdate",imageName,defaultImage];
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
         ;
@@ -940,9 +906,7 @@ static NSString *isPrimaryPhotoOrNot;
                                                    destructiveButtonTitle: nil
                                                         otherButtonTitles: @"Take a new photo", @"Choose from existing", nil];
         [actionSheet showInView:self.view];
-        
     }
-    
 }
 
 
@@ -989,23 +953,25 @@ static NSString *isPrimaryPhotoOrNot;
     }
 }
 -(UIImage *)scaleAndRotateImage:(UIImage *)imageRef {
+    
     int kMaxResolution = 640; // Or whatever
-    
     CGImageRef imgRef = imageRef.CGImage;
-    
     CGFloat width = CGImageGetWidth(imgRef);
     CGFloat height = CGImageGetHeight(imgRef);
-    
-    
     CGAffineTransform transform = CGAffineTransformIdentity;
     CGRect bounds = CGRectMake(0, 0, width, height);
-    if (width > kMaxResolution || height > kMaxResolution) {
+    
+    if (width > kMaxResolution || height > kMaxResolution)
+    {
         CGFloat ratio = width/height;
-        if (ratio > 1) {
+        
+        if (ratio > 1)
+        {
             bounds.size.width = kMaxResolution;
             bounds.size.height = roundf(bounds.size.width / ratio);
         }
-        else {
+        else
+        {
             bounds.size.height = kMaxResolution;
             bounds.size.width = roundf(bounds.size.height * ratio);
         }
@@ -1068,10 +1034,9 @@ static NSString *isPrimaryPhotoOrNot;
             transform = CGAffineTransformMakeTranslation(imageSize.height, 0.0);
             transform = CGAffineTransformRotate(transform, M_PI / 2.0);
             break;
-            
         default:
-            [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];
             
+            [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];
     }
     
     UIGraphicsBeginImageContext(bounds.size);
@@ -1082,7 +1047,8 @@ static NSString *isPrimaryPhotoOrNot;
         CGContextScaleCTM(context, -scaleRatio, scaleRatio);
         CGContextTranslateCTM(context, -height, 0);
     }
-    else {
+    else
+    {
         CGContextScaleCTM(context, scaleRatio, -scaleRatio);
         CGContextTranslateCTM(context, 0, -height);
     }
@@ -1122,7 +1088,7 @@ static NSString *isPrimaryPhotoOrNot;
             fileData = UIImageJPEGRepresentation(img, 0.1);
             mimeType =@"image/jpeg";
             
-            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@&picName=%@",@"http://doumees.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserImageUpdate",imageName,defaultImage];
+            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@&picName=%@",@"http://www.doumees.com/api/ImgaeUploader/Post",userIdStr,@"UserImageUpdate",imageName,defaultImage];
             
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
@@ -1137,11 +1103,8 @@ static NSString *isPrimaryPhotoOrNot;
                                             fileName:@"Image"
                                             mimeType:mimeType];
                 }
-                
             }
                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                      
-                      
                       if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1) {
                           
                           [ProgressHUD dismiss];
@@ -1185,15 +1148,12 @@ static NSString *isPrimaryPhotoOrNot;
             fileName =[NSString stringWithFormat:@"%@",imageName];
             fileData = UIImageJPEGRepresentation(img, 1.0);
             mimeType =@"image/jpeg";
-            //    NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&isPrimary=%@&Type=%@&PicName=%@",@"http://ondemandapinew.flexsin.in/api/ImgaeUploader/Post",userIdStr,isPrimary,@"UserImageUpdate",imageName];
-            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@",@"http://doumees.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserImage",imageName];
+            NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@&Image=%@",@"http://www.doumees.com/api/ImgaeUploader/Post",userIdStr,@"UserImage",imageName];
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
             ;
-            // [ProgressHUD show:@"Please wait..." Interaction:NO];
+      
             [manager POST:urlstr parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-                //  [self doSharePhoto];
-                
                 if(fileData)
                 {
                     [formData appendPartWithFileData:fileData

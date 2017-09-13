@@ -50,14 +50,13 @@
             
             CGFloat badgeW = self.currentBackgroundImage.size.width;
             CGFloat badgeH = self.currentBackgroundImage.size.height;
-            
             CGSize titleSize = [badgeValue sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.badgeTitleFont, NSFontAttributeName, nil]];
             frame.size.width = MAX(badgeW, titleSize.width + 10);
             frame.size.height = badgeH;
             self.frame = frame;
             
-        } else {
-            
+        }
+        else {
             frame.size.width = 12.0f;
             frame.size.height = frame.size.width;
         }

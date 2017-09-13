@@ -131,7 +131,8 @@
                                                                 [self.tabBarController setSelectedIndex:1];
                                                                 [self.navigationController pushViewController:dateView animated:NO];
                                                             }
-                                                            else{
+                                                            else
+                                                            {
                                                             RatingViewController *rateViewCall = [self.storyboard instantiateViewControllerWithIdentifier:@"rating"];
                                                             if (self.isFromCreditCardDeclinedStr) {
                                                                 rateViewCall.isFromLoginViewController = YES;

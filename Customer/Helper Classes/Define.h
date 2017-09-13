@@ -11,7 +11,7 @@
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define BaseUrl @"www.google.com"
 #define BaseServerUrl @"http://www.ondemandapi.flexsin.in/API/"
-//
+
 //#define NewBaseServerUrl @"http://ondemandapinew.flexsin.in/API/"
 //#define NewBaseQAServerUrl @"http://ondemandapinew.flexsin.in/API/"
 //#define SignalRBaseUrl @"http://ondemandapiqa.flexsin.in/signalr/hubs"
@@ -19,9 +19,18 @@
 //#define NewBaseServerUrl @"http://ondemandapiqa.flexsin.in/API/"
 //#define NewBaseQAServerUrl @"http://ondemandapiqa.flexsin.in/API/"
 
-#define SignalRBaseUrl @"http://doumeesApi.flexsin.in/signalr/hubs"
-#define NewBaseServerUrl @"http://doumeesApi.flexsin.in/API/"
-#define NewBaseQAServerUrl @"http://doumeesApi.flexsin.in/API/"
+//Development base URls
+//#define SignalRBaseUrl @"http://doumeesApi.flexsin.in/signalr/hubs"
+//#define NewBaseServerUrl @"http://doumeesApi.flexsin.in/API/"
+//#define NewBaseQAServerUrl @"http://doumeesApi.flexsin.in/API/"
+
+//Staging base URls
+#define SignalRBaseUrl @"https://api.doumees.com/signalr/hubs"
+#define NewBaseServerUrl @"https://api.doumees.com/API/"
+#define NewBaseQAServerUrl @"https://api.doumees.com/API/"
+
+
+//api.doumees.com
 
  #define AppName @"AppName"
 #define APIForgotPassword @"http://ondemandapinew.flexsin.in/ForgetPassword/Index"

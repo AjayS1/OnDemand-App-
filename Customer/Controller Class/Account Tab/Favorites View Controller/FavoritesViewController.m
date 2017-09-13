@@ -31,7 +31,7 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     [self.favoriteImageView setHidden:YES];
     dataArray = [[NSMutableArray alloc]initWithObjects:@"1",@"1",@"1",@"1",@"1",@"1",@"1",@"1",@"1",@"1", nil];
-    favoritesTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+   // favoritesTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self fetchFavoritesUserListApiData];
     
 }
@@ -170,7 +170,7 @@
                     else {
                         [self.view setBackgroundColor:[UIColor whiteColor]];
                         [favoritesTableView setHidden:YES];
-
+                        
                         [self.dontHaveLabel setHidden:NO];
                         [self.favoriteImageView setHidden:NO];
                     }
@@ -225,14 +225,12 @@
                     [self.view setBackgroundColor:[UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0]];
                     [self.dontHaveLabel setHidden:YES];
                     [favoritesTableView setHidden:NO];
-
                     [self.favoriteImageView setHidden:YES];
                 }
                 else {
-                    [self.view setBackgroundColor:[UIColor whiteColor]];
+                   // [self.view setBackgroundColor:[UIColor whiteColor]];
                     [self.dontHaveLabel setHidden:NO];
                     [favoritesTableView setHidden:YES];
-
                     [self.favoriteImageView setHidden:NO];
                 }
                 [favoritesTableView reloadData];
@@ -240,20 +238,20 @@
             
             else if (([[responseObject objectForKey:@"StatusCode"] intValue] ==2))
             {
-                [self.view setBackgroundColor:[UIColor whiteColor]];
-                [self.dontHaveLabel setHidden:NO];
+                  if (self.tableDataArray.count) {
+            [self.view setBackgroundColor:[UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0]];
+                      [self.dontHaveLabel setHidden:YES];
                 [favoritesTableView setHidden:NO];
 
-                [self.favoriteImageView setHidden:NO];
+                [self.favoriteImageView setHidden:YES];
             }
             
             else {
-                [self.view setBackgroundColor:[UIColor whiteColor]];
+              //  [self.view setBackgroundColor:[UIColor whiteColor]];
                 [self.dontHaveLabel setHidden:NO];
                 [favoritesTableView setHidden:YES];
-
                 [self.favoriteImageView setHidden:NO];
-                
+            }
                 [CommonUtils showAlertWithTitle:@"Alert!" withMsg:[responseObject objectForKey:@"Message"] inController:self];
             }
         }

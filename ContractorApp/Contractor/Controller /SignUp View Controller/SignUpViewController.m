@@ -24,7 +24,7 @@
     
     UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 68, self.view.frame.size.width,self.view.frame.size.height-68)];
 
-    NSString *url=@"http://doumees.flexsin.in/Contractor/signup";
+    NSString *url=@"http://www.doumees.com/Contractor/signup";
     [webview setBackgroundColor:[UIColor whiteColor]];
     NSURL *nsurl=[NSURL URLWithString:url];
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];

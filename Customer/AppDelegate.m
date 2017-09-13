@@ -7,19 +7,21 @@
 
 #import "AppDelegate.h"
 
-#define SYSTEM_VERSION                  [[UIDevice currentDevice].systemVersion floatValue]
+#define SYSTEM_VERSION         [[UIDevice currentDevice].systemVersion floatValue]
 
 @interface AppDelegate () <CLLocationManagerDelegate>{
     NSTimer *timer;
     SingletonClass *sharedInstance;
 }
 @end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     sharedInstance = [SingletonClass sharedInstance];
+  
     [self getLongitudeAndLatitude];
     if (!geocoder) {
         geocoder = [[CLGeocoder alloc] init];
@@ -55,6 +57,7 @@
                                                          UIRemoteNotificationTypeAlert |
                                                          UIRemoteNotificationTypeSound)];
     }
+    
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     

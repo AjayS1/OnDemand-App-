@@ -12,24 +12,28 @@
     
     IBOutlet UIScrollView *bgScrollView;
     IBOutlet UILabel *likeDetailsLbl;
+    
     IBOutlet UILabel *datingTitleLbl;
     IBOutlet UILabel *imageCountLabel;
+    
     IBOutlet UILabel *datingDetailsLbl;
     IBOutlet UILabel *availaibleLabel;
-    IBOutlet UIImageView *previewImageView;
     
+    IBOutlet UIImageView *previewImageView;
     IBOutlet UICollectionView *imageCollectionView;
     
     IBOutlet UILabel *customerNameLabel;
     IBOutlet UILabel *bodySizeLabel;
+    
     IBOutlet UIImageView *favouriteImageView;
     IBOutlet UILabel *distanceLabel;
     
     IBOutlet UIImageView *photoVerified;
     IBOutlet UIImageView *idVerified;
-    IBOutlet UIImageView *backgroundVerified;
     
+    IBOutlet UIImageView *backgroundVerified;
     IBOutlet UILabel *photoVerificationLabel;
+    
     IBOutlet UILabel *idVerificationLabel;
     IBOutlet UILabel *backgroundVerificationLabel;
     
@@ -38,26 +42,29 @@
     
     IBOutlet UILabel *bodyTypeLabel;
     IBOutlet UILabel *weightLabel;
+    
     IBOutlet UILabel *hairLabel;
     IBOutlet UILabel *eyeColorLabel;
+    
     IBOutlet UILabel *smokingLabel;
     IBOutlet UILabel *drinkingLabel;
+    
     IBOutlet UILabel *educationLabel;
     IBOutlet UILabel *languageLabel;
     
     IBOutlet UILabel *dateTimeLabel;
     IBOutlet UILabel *addressLabel;
-    IBOutlet UILabel *notesLabel;
     
+    IBOutlet UILabel *notesLabel;
     IBOutlet UIButton *dateInfoButton;
+    
     IBOutlet UIButton *profileButton;
     IBOutlet UILabel *titleNameLabel;
+    
     IBOutlet UIButton *favouriteButton;
     IBOutlet UIButton *settingsButton;
     
-    
     IBOutlet UIButton *requestNowButton;
-    
     IBOutlet UIButton *reserveHerButton;
     
     IBOutlet UIButton *contractorTypeButton;

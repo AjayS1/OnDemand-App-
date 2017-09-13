@@ -236,7 +236,9 @@
     // Update push Notification   http://ondemandapi.flexsin.in/API/Account/UpdateMobileNotification?userID=Cu009fe53&eventName=Announcements&status=0
     //  NSString *userIdStr = [[NSUserDefaults standardUserDefaults]objectForKey:@"USERIDDATA"];
     NSString *userIdStr = sharedInstance.userId;
-    NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&eventName=%@&status=%@&UserType=%@",APIUpdatePushnotificationSettings,userIdStr,value,status,@"1"];
+    NSString *urlstr = [NSString
+                        stringWithFormat:@"%@?userID=%@&eventName=%@&status=%@&UserType=%@", APIUpdatePushnotificationSettings,userIdStr,value,status,@"1"];
+
     //    NSMutableDictionary *params=[[NSMutableDictionary alloc]initWithObjectsAndKeys:userIdStr,@"userID",@"eventName",@"attributeType",@"1",value,nil];
     NSString *encodedUrl = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     

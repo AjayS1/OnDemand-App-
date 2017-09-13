@@ -316,6 +316,8 @@
                 NSLog(@"Response is --%@",responseObject);
                 sharedInstance.requestEndDateButton = @"0";
                 if ([[responseObject objectForKey:@"StatusCode"] intValue] ==1) {
+                    [[NSUserDefaults standardUserDefaults] setValue:@"10" forKey:@"requestToEndDateValue"];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
                     NSString *otherDateType = [responseObject objectForKey:@"OtherEndDateType"];
                     NSString *otherDateTypeID = [responseObject objectForKey:@"OtherEndDateID"];
                     sharedInstance.otherDateType = otherDateType;

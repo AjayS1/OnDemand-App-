@@ -41,17 +41,13 @@
 
 @property(nonatomic,strong) NSString *selectedIndexxStr;
 @property(nonatomic,strong) NSString *typeValueStr;
-
 @property(nonatomic,assign) BOOL isCheckedFilterValue;
 @property(nonatomic,strong) NSString *titleStr;
 @property(nonatomic,strong) NSMutableArray *languageIdArray;
 @property(nonatomic,strong) NSMutableArray *smokingIdArray;
 @property(nonatomic,strong) NSMutableArray *smokingNameArray;
 @property(nonatomic,strong) NSMutableArray *drinkingNameArray;
-
 @property(nonatomic,strong) NSMutableArray *drinkingIdArray;
-
-
 
 - (IBAction)backButtonClicked:(id)sender;
 - (IBAction)doneButtonClicked:(id)sender;

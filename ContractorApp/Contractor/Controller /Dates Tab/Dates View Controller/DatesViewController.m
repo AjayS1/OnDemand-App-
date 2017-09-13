@@ -55,9 +55,9 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     [self.dateImageView setHidden:YES];
     [self.dontHaveMessage setHidden:YES];
-     [self.datesWithSegmentView setHidden:YES];
+    [self.datesWithSegmentView setHidden:YES];
     [_datesView setHidden:NO];
-   
+    
     [self.segmentButton setHidden:YES];
     self.segmentButton.layer.borderColor = [UIColor colorWithRed:149.0/255.0 green:82.0/255.0 blue:158.0/255.0 alpha:1.0].CGColor;
     self.segmentButton.layer.masksToBounds = YES;
@@ -75,7 +75,7 @@
     [_datesView setHidden:NO];
     _currentDatesView.layer.borderColor = [UIColor colorWithRed:166.0/255.0 green:108.0/255.0 blue:172.0/255.0 alpha:1].CGColor;
     _currentDatesView.layer.borderWidth = 1.1;
-   _currentDatesView.layer.cornerRadius = 4.0;
+    _currentDatesView.layer.cornerRadius = 4.0;
     self.automaticallyAdjustsScrollViewInsets = false;
     if (APPDELEGATE.hubConnection) {
         [APPDELEGATE.hubConnection  reconnecting];
@@ -149,7 +149,7 @@
                                                  name:@"apiRefreshCall"
                                                object:nil];
     
-
+    
     [self.segmentButton setHidden:YES];
     self.navigationController.navigationBar.hidden=YES;
     [self.tabBarController.tabBar setHidden:NO];
@@ -464,7 +464,7 @@
             [self.dontHaveMessage setHidden:YES];
             [datesTable setHidden:NO];
             [_datesView setHidden:YES];
-
+            
             [self.datesWithSegmentView setHidden:NO];
             [self.view setBackgroundColor:[UIColor whiteColor]];
             
@@ -532,34 +532,34 @@
     if (WIN_WIDTH == 320) {
         [ cell.dateLbl setFont:[UIFont systemFontOfSize:10]];
         [ cell.addressLbl setFont:[UIFont systemFontOfSize:10]];
-//        if (checkSegmentIndexValue == 0) {
-//            [cell.addressLbl setFrame:CGRectMake(cell.addressLbl.frame.origin.x, cell.addressLbl.frame.origin.y, cellAddressLabelWidth-8, cell.addressLbl.frame.size.height)];
-//            [cell.datesImageView setFrame:CGRectMake(cell.nameLbl.frame.origin.x, cell.dateLbl.frame.origin.y+3, 13, 13)];
-//            [cell.dateLbl setFrame:CGRectMake(cell.datesImageView.frame.origin.x+cell.datesImageView.frame.size.width+4, cell.dateLbl.frame.origin.y, 270, cell.dateLbl.frame.size.height)];
-//            
-//         
-//            
-//
-//        }
-//        else
-//        {
-//            [cell.addressLbl setFrame:CGRectMake(cell.addressLbl.frame.origin.x, cell.addressLbl.frame.origin.y, cellAddressLabelWidth+45, cell.addressLbl.frame.size.height)];
-//            [cell.datesImageView setFrame:CGRectMake(cell.nameLbl.frame.origin.x, cell.dateLbl.frame.origin.y+3, 13, 13)];
-//            [cell.dateLbl setFrame:CGRectMake(cell.datesImageView.frame.origin.x+cell.datesImageView.frame.size.width+4, cell.dateLbl.frame.origin.y, celldateLabelWidth+25, cell.dateLbl.frame.size.height)];
-//            [ cell.dateLbl setFont:[UIFont systemFontOfSize:10]];
-//            [ cell.addressLbl setFont:[UIFont systemFontOfSize:10]];
-//            
-//        }
+        //        if (checkSegmentIndexValue == 0) {
+        //            [cell.addressLbl setFrame:CGRectMake(cell.addressLbl.frame.origin.x, cell.addressLbl.frame.origin.y, cellAddressLabelWidth-8, cell.addressLbl.frame.size.height)];
+        //            [cell.datesImageView setFrame:CGRectMake(cell.nameLbl.frame.origin.x, cell.dateLbl.frame.origin.y+3, 13, 13)];
+        //            [cell.dateLbl setFrame:CGRectMake(cell.datesImageView.frame.origin.x+cell.datesImageView.frame.size.width+4, cell.dateLbl.frame.origin.y, 270, cell.dateLbl.frame.size.height)];
+        //
+        //
+        //
+        //
+        //        }
+        //        else
+        //        {
+        //            [cell.addressLbl setFrame:CGRectMake(cell.addressLbl.frame.origin.x, cell.addressLbl.frame.origin.y, cellAddressLabelWidth+45, cell.addressLbl.frame.size.height)];
+        //            [cell.datesImageView setFrame:CGRectMake(cell.nameLbl.frame.origin.x, cell.dateLbl.frame.origin.y+3, 13, 13)];
+        //            [cell.dateLbl setFrame:CGRectMake(cell.datesImageView.frame.origin.x+cell.datesImageView.frame.size.width+4, cell.dateLbl.frame.origin.y, celldateLabelWidth+25, cell.dateLbl.frame.size.height)];
+        //            [ cell.dateLbl setFont:[UIFont systemFontOfSize:10]];
+        //            [ cell.addressLbl setFont:[UIFont systemFontOfSize:10]];
+        //
+        //        }
     }
     else{
-//        [cell.addressLbl setFrame:CGRectMake(cell.addressLbl.frame.origin.x, cell.addressLbl.frame.origin.y, cellAddressLabelWidth+65, cell.addressLbl.frame.size.height)];
-//        [cell.datesImageView setFrame:CGRectMake(cell.nameLbl.frame.origin.x, cell.dateLbl.frame.origin.y+3, 13, 13)];
-//        [cell.dateLbl setFrame:CGRectMake(cell.datesImageView.frame.origin.x+cell.datesImageView.frame.size.width+4, cell.dateLbl.frame.origin.y, cell.dateLbl.frame.size.width+5, cell.dateLbl.frame.size.height)];
+        //        [cell.addressLbl setFrame:CGRectMake(cell.addressLbl.frame.origin.x, cell.addressLbl.frame.origin.y, cellAddressLabelWidth+65, cell.addressLbl.frame.size.height)];
+        //        [cell.datesImageView setFrame:CGRectMake(cell.nameLbl.frame.origin.x, cell.dateLbl.frame.origin.y+3, 13, 13)];
+        //        [cell.dateLbl setFrame:CGRectMake(cell.datesImageView.frame.origin.x+cell.datesImageView.frame.size.width+4, cell.dateLbl.frame.origin.y, cell.dateLbl.frame.size.width+5, cell.dateLbl.frame.size.height)];
         [ cell.dateLbl setFont:[UIFont systemFontOfSize:12]];
         [ cell.addressLbl setFont:[UIFont systemFontOfSize:12]];
         
     }
-
+    
     
     [cell.dontHaveMessageLbl setHidden:YES];
     cell.notificationCountLbl.hidden = NO;
@@ -579,7 +579,7 @@
     if (checkSegmentIndexValue == 0) {
         [cell.notificationCountLbl setBackgroundColor:[UIColor redColor]];
         [cell.cancelFeeLbl setHidden:YES];
-       // [cell.cancelMessageLbl setHidden:YES];
+        // [cell.cancelMessageLbl setHidden:YES];
         cell.notificationCountLbl.hidden = YES;
         if (indexPath.section == 0) {
             cell.statusAcceptedLbl.hidden = YES;
@@ -616,7 +616,7 @@
             
             NSString *dateStatusTypeValue =  [NSString stringWithFormat:@"%@",[[pendingDateArray objectAtIndex:indexPath.row] objectForKey:@"DateStatusType"]];
             NSString *dateValueType =  [NSString stringWithFormat:@"%@",[[pendingDateArray objectAtIndex:indexPath.row] objectForKey:@"RequestType"]];
-           
+            
             if ([dateValueType isEqualToString:@"1"]) {
                 [cell.datesImageView setImage:[UIImage imageNamed:@"lightning"]];
             }
@@ -681,28 +681,28 @@
             [cell.addressLbl setHidden:YES];
             [cell.dateTimeLbl setHidden:YES];
             //cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-           // datesTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+            // datesTable.separatorStyle = UITableViewCellSeparatorStyleNone;
             
-//            if ([sectionTitle isEqualToString:@"PENDING"]) {
-//                [cell.dontHaveMessageLbl setText:@"No pending dates."];
-//            }
-//            else if ([sectionTitle isEqualToString:@"UPCOMING"]){
-//                [cell.dontHaveMessageLbl setText:@"No upcoming dates."];
-//                
-//            }
-//            else if ([sectionTitle isEqualToString:@"IN PROGRESS"]){
-//                [cell.dontHaveMessageLbl setText:@"No in progress dates."];
-//            }
+            //            if ([sectionTitle isEqualToString:@"PENDING"]) {
+            //                [cell.dontHaveMessageLbl setText:@"No pending dates."];
+            //            }
+            //            else if ([sectionTitle isEqualToString:@"UPCOMING"]){
+            //                [cell.dontHaveMessageLbl setText:@"No upcoming dates."];
+            //
+            //            }
+            //            else if ([sectionTitle isEqualToString:@"IN PROGRESS"]){
+            //                [cell.dontHaveMessageLbl setText:@"No in progress dates."];
+            //            }
         }
     }
     else
     {
         if (historyDateArray.count) {
             
-           // datesTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-           // cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            // datesTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            // cell.selectionStyle = UITableViewCellSelectionStyleGray;
             cell.cancelFeeLbl.textColor = [UIColor colorWithRed:38.0/255.0 green:38.0/255.0 blue:38.0/255.0 alpha:1.0];
-
+            
             if (historyDateArray.count ==1)
                 [cell.seperatorLbl setHidden:YES];
             else
@@ -720,7 +720,7 @@
             cell.nameLbl.text = [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"Name"];
             cell.addressLbl.text = [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"Location"];
             NSString *dateValueType =  [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"RequestType"]];
-         NSString *dateType =   [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"]];
+            NSString *dateType =   [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"]];
             if ([dateType isEqualToString:@"6"]  || [dateType isEqualToString:@"10"] || [dateType isEqualToString:@"19"] || [dateType isEqualToString:@"20"]) {
                 if ([dateValueType isEqualToString:@"1"]) {
                     [cell.datesImageView setImage:[UIImage imageNamed:@"lightning"]];
@@ -734,8 +734,8 @@
             {
                 [cell.datesImageView setImage:[UIImage imageNamed:@"clock"]];
             }
-          
-
+            
+            
             NSString *reserveTimeStr = [NSString stringWithFormat:@"%@", [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"ReserveTime"]];
             
             NSArray *nameStr = [reserveTimeStr componentsSeparatedByString:@"."];
@@ -754,7 +754,7 @@
             NSString *readNotificationStatus = [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"isContractorRead"]];
             
             if ( [readNotificationStatus isEqualToString:@"0"]) {
-                cell.notificationCountLbl.hidden = NO;
+                cell.notificationCountLbl.hidden = YES;
                 cell.notificationCountLbl.layer.cornerRadius=cell.notificationCountLbl.frame.size.height/2;
                 cell.notificationCountLbl.layer.masksToBounds = YES;
             }
@@ -763,30 +763,20 @@
             }
             
             NSString *requestDate = [self convertUTCTimeToLocalTime:fileKeyArray WithFormate:@"yyyy-MM-dd'T'HH:mm:ss"];
-            //  [cell.dateTimeLbl setText:[NSString stringWithFormat:@"%@",requestDate]];
             [cell.dateTimeLbl setText:[self setDateStatusWithDate:requestDate]];
             cell.dateLbl.text = [self changeDateInParticularFormateWithString:reserveDate WithFormate:@"yyyy-MM-dd HH:mm:ss"];
+            
             NSString *imageurlStr = [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"PicUrl"];
             NSURL *imageUrl = [NSURL URLWithString:imageurlStr];
             [cell.userImageView setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"placeholder_small"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             
             //Manging the status of the date
-            /*
-             CancelDateContractorEnd = 10,
-             CustomerCancelled = 6,
-             CancelDateContractorEndWithFee = 19,
-             CustomerCancelledWithFee = 20,
-             EndtDate = 9,
-             PaymentReceived = 11,
-             PaymentPending = 12,
-             */
-            
             NSInteger dateStatusType = [[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"] integerValue];
             
             switch (dateStatusType) {
                 case 6:
                 {
-                   [cell.cancelFeeLbl setText:[NSString stringWithFormat:@"%@ / %@",[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]],@"Cancelled"]];
+                    [cell.cancelFeeLbl setText:[NSString stringWithFormat:@"%@ / %@",[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]],@"Cancelled"]];
                     [cell.cancelMessageLbl setText:@""];
                 }
                     break;
@@ -800,7 +790,7 @@
                     
                 case 10:
                 {
-//                    [cell.cancelFeeLbl setText:[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]]];
+                    //                    [cell.cancelFeeLbl setText:[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]]];
                     [cell.cancelFeeLbl setText:[NSString stringWithFormat:@"%@ / %@",[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]],@"Cancelled"]];
                     [cell.cancelMessageLbl setText:@""];
                 }
@@ -819,7 +809,7 @@
                     [cell.cancelMessageLbl setText:@""];
                 }
                     break;
-
+                    
                     
                 case 12:
                 {
@@ -831,14 +821,14 @@
                 case 19:
                 {
                     [cell.cancelFeeLbl setText:[NSString stringWithFormat:@"%@ / %@",[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]],@"Cancelled"]];
-//                    [cell.cancelFeeLbl setText:[NSString stringWithFormat:@"-%@",[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]]]];
+                    //                    [cell.cancelFeeLbl setText:[NSString stringWithFormat:@"-%@",[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]]]];
                     [cell.cancelMessageLbl setText:@""];
                 }
                     break;
                     
                 case 20:
                 {
-                   [cell.cancelFeeLbl setText:[NSString stringWithFormat:@"%@ / %@",[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]],@"Cancelled"]];
+                    [cell.cancelFeeLbl setText:[NSString stringWithFormat:@"%@ / %@",[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]],@"Cancelled"]];
                     [cell.cancelFeeLbl setText:[CommonUtils getFormateedNumberWithValue:[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"CancellationnFee"]]];
                     [cell.cancelMessageLbl setText:@""];
                 }
@@ -851,7 +841,7 @@
         else
         {
             //cell.selectionStyle = UITableViewCellSelectionStyleNone;
-           // datesTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+            // datesTable.separatorStyle = UITableViewCellSeparatorStyleNone;
             [cell.cancelFeeLbl setHidden:YES];
             [cell.seperatorLbl setHidden:YES];
             [cell.cancelMessageLbl setHidden:YES];
@@ -921,11 +911,13 @@
 {
     NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
     [dateFormatter2 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
     NSDateFormatter *dateFormatter3= [[NSDateFormatter alloc] init];
     [dateFormatter3 setDateFormat:@"MM/dd/yyyy"];
+    
     NSDateFormatter *dateFormatter4= [[NSDateFormatter alloc] init];
     [dateFormatter4 setDateFormat:@"EEEE"];
-    // NSDate *formattedDate = [dateFormatter3 dateFromString:date];
+    
     NSDate *dateConverted = [dateFormatter2 dateFromString:date];
     NSDateFormatter *dateFormatter5= [[NSDateFormatter alloc] init];
     [dateFormatter5 setDateFormat:@"hh:mm aaa"];
@@ -936,6 +928,7 @@
     NSInteger day = [componentsToday day] - [componentsDate day];
     NSString *dateStatus;
     NSLog(@"Day %ld",(long)day);
+    
     if (dayDiff == 0) {
         NSLog(@"Today");
         dateStatus = [dateFormatter5 stringFromDate:dateConverted];
@@ -966,25 +959,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *sectionTitle = [animalSectionTitles objectAtIndex:indexPath.section] ;
-    NSArray *sectionData = [animals objectForKey:sectionTitle];
-
     if (checkSegmentIndexValue == 0) {
-        if (pendingDateArray.count) {
+        if (pendingDateArray.count)
+        {
             NSString *dateValueType =  [NSString stringWithFormat:@"%@",[[pendingDateArray objectAtIndex:indexPath.row] objectForKey:@"RequestType"]];
+            
             sharedInstance.requestTypeStr = dateValueType;
             NSString *dateStatusType =  [NSString stringWithFormat:@"%@",[[pendingDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"]];
-            if ([dateStatusType isEqualToString:@"9"]|| [dateStatusType isEqualToString:@"12"]|| [dateStatusType isEqualToString:@"10"]|| [dateStatusType isEqualToString:@"13"])
-            {
+            
+            if ([dateStatusType isEqualToString:@"9"]|| [dateStatusType isEqualToString:@"12"]|| [dateStatusType isEqualToString:@"10"]|| [dateStatusType isEqualToString:@"13"]){
                 [CommonUtils showAlertWithTitle:@"Alert" withMsg:@"Your date is being processed. Please check again later." inController:self];
-//                PaymentDateCompletedViewController *paymentView = [self.storyboard instantiateViewControllerWithIdentifier:@"paymentDateCompleted"];
-//                paymentView.self.dateIdStr =  [[sectionData objectAtIndex:indexPath.row] objectForKey:@"DateID"];
-//                paymentView.self.dateTypeStr = [NSString stringWithFormat:@"%@",[[sectionData objectAtIndex:indexPath.row] objectForKey:@"DateStatusType"]];
-//                [self.navigationController pushViewController:paymentView animated:YES];
             }
             
-            else if ([dateStatusType isEqualToString:@"11"]) {
+            else if ([dateStatusType isEqualToString:@"11"])
+            {
                 
                 PastDateDetailsViewController *pastDateDetailsView = [self.storyboard instantiateViewControllerWithIdentifier:@"pastDateDetail"];
                 pastDateDetailsView.self.dateRequestedType = [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"RequestType"]];
@@ -992,8 +982,8 @@
                 pastDateDetailsView.self.dateTypeStr = [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"]];
                 [self.navigationController pushViewController:pastDateDetailsView animated:YES];
             }
-            else {
-                
+            else
+            {
                 DateDetailsViewController *dateDetailsView = [self.storyboard instantiateViewControllerWithIdentifier:@"dateDetail"];
                 dateDetailsView.self.dateIdStr =  [[pendingDateArray objectAtIndex:indexPath.row] objectForKey:@"DateID"];
                 //dateDetailsView.self.dateIdStr =  @"Date4";
@@ -1011,27 +1001,19 @@
             NSString *dateStatusType =  [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"]];
             NSString *dateValueType =  [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"RequestType"]];
             sharedInstance.requestTypeStr = dateValueType;
-            if ( [dateStatusType isEqualToString:@"12"] || [dateStatusType isEqualToString:@"9"] ) {
-                PastDateDetailsViewController *pastDateDetailsView = [self.storyboard instantiateViewControllerWithIdentifier:@"pastDateDetail"];
-                pastDateDetailsView.self.dateIdStr =  [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateID"];
-                pastDateDetailsView.self.dateTypeStr = [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"]];
-                pastDateDetailsView.self.userNameStr =  [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"Name"];
-                pastDateDetailsView.self.picUrlStr =  [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"PicUrl"];
-                [self.navigationController pushViewController:pastDateDetailsView animated:YES];
+            
+            if ( [dateStatusType isEqualToString:@"12"] || [dateStatusType isEqualToString:@"9"] )
+            {
+                [CommonUtils showAlertWithTitle:@"" withMsg:@"Your date is being processed. Please check again later." inController:self];
             }
+            
             else
             {
                 PastDateDetailsViewController *pastDateDetailsView = [self.storyboard instantiateViewControllerWithIdentifier:@"pastDateDetail"];
                 pastDateDetailsView.self.dateIdStr =  [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateID"];
                 pastDateDetailsView.self.dateTypeStr = [NSString stringWithFormat:@"%@",[[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"DateType"]];
-                //pastDateDetailsView.self.dateTypeStr = @"19";
                 pastDateDetailsView.self.userNameStr =  [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"Name"];
                 pastDateDetailsView.self.picUrlStr =  [[historyDateArray objectAtIndex:indexPath.row] objectForKey:@"PicUrl"];
-                
-                //                if ([pastDateDetailsView.self.dateTypeStr isEqualToString:@"6"] ||[pastDateDetailsView.self.dateTypeStr isEqualToString:@"10"]) {
-                //                   pastDateDetailsView.theDateState =
-                //                }
-                //
                 [self.navigationController pushViewController:pastDateDetailsView animated:YES];
             }
         }
@@ -1045,10 +1027,9 @@
         case 0:
             checkSegmentIndexValue = 0;
             [datesTable reloadData];
-            
             break;
-        case 1:{
-            
+        case 1:
+        {
             checkSegmentIndexValue = 1;
             [datesTable reloadData];
         }
@@ -1065,7 +1046,7 @@
         case 564:
         {
             checkSegmentIndexValue = 0;
-             [_currenttButton setTitleColor:[UIColor colorWithRed:166.0/255.0 green:108.0/255.0 blue:172.0/255.0 alpha:1] forState:UIControlStateNormal];
+            [_currenttButton setTitleColor:[UIColor colorWithRed:166.0/255.0 green:108.0/255.0 blue:172.0/255.0 alpha:1] forState:UIControlStateNormal];
             [_historyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             _currentDatesVAlueView.backgroundColor = [UIColor whiteColor];
             _historydatesView.backgroundColor = [UIColor colorWithRed:166.0/255.0 green:108.0/255.0 blue:172.0/255.0 alpha:1];
@@ -1078,20 +1059,18 @@
         {
             checkSegmentIndexValue = 1;
             [_historyButton setTitleColor:[UIColor colorWithRed:166.0/255.0 green:108.0/255.0 blue:172.0/255.0 alpha:1] forState:UIControlStateNormal];
-               [_currenttButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_currenttButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             _currentDatesVAlueView.backgroundColor = [UIColor colorWithRed:166.0/255.0 green:108.0/255.0 blue:172.0/255.0 alpha:1];
             _historydatesView.backgroundColor = [UIColor whiteColor];
             [_currentDatesView setBackgroundColor:[UIColor colorWithRed:166.0/255.0 green:108.0/255.0 blue:172.0/255.0 alpha:1]];
-
             [datesTable reloadData];
         }
             break;
-            
         default:
             break;
     }
-    
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -1135,19 +1114,14 @@
                 pendingDateArray = [[NSMutableArray alloc]init];
                 historyDateArray = [[NSMutableArray alloc]init];
                 inProgressDateArray = [[NSMutableArray alloc]init];
+                
                 if ([[[responseObject objectForKey:@"result"]objectForKey:@"UserDList"] isKindOfClass:[NSArray class]]) {
                     pendingDateArray = [[responseObject objectForKey:@"result"]objectForKey:@"UserDList"];
                 }
-//                if ([[[responseObject objectForKey:@"result"]objectForKey:@"UpcomingDate"] isKindOfClass:[NSArray class]]) {
-//                    upComingDateArray =  [[responseObject objectForKey:@"result"]objectForKey:@"UpcomingDate"];
-//                    
-//                }
+                
                 if ([[[responseObject objectForKey:@"result"]objectForKey:@"HistoryDate"] isKindOfClass:[NSArray class]]) {
                     historyDateArray =  [[responseObject objectForKey:@"result"]objectForKey:@"HistoryDate"];
-                }                 
-//                if ([[[responseObject objectForKey:@"result"]objectForKey:@"Progressdate"] isKindOfClass:[NSArray class]]) {
-//                    inProgressDateArray =  [[responseObject objectForKey:@"result"]objectForKey:@"Progressdate"];
-//                }
+                }
                 
                 if ( (!(pendingDateArray.count)) &&(!(historyDateArray.count)))
                 {
@@ -1155,7 +1129,7 @@
                     [self.dateImageView setHidden:NO];
                     [self.dontHaveMessage setHidden:NO];
                     self.dontHaveMessage.text = @"You don't have any dates.";
-
+                    
                     [datesTable setHidden:YES];
                     [self.segmentButton setHidden:YES];
                     [_datesView setHidden:NO];
@@ -1168,7 +1142,7 @@
                     [self.dontHaveMessage setHidden:YES];
                     [datesTable setHidden:NO];
                     self.dontHaveMessage.text = @"You don't have any dates.";
-
+                    
                     [self.segmentButton setHidden:NO];
                     [_datesView setHidden:YES];
                     [self.datesWithSegmentView setHidden:NO];
@@ -1176,10 +1150,10 @@
                     [datesTable reloadData];
                 }
                 
-                if ([[responseObject objectForKey:@"CounterResult"] isKindOfClass:[NSDictionary class]]) {
+                if ([[responseObject objectForKey:@"CounterResult"] isKindOfClass:[NSDictionary class]])
+                {
                     if ([[[responseObject objectForKey:@"CounterResult"] objectForKey:@"Dates"] isEqualToString:@"0"]) {
                         [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
-                        
                     }
                     else
                     {
@@ -1190,14 +1164,17 @@
                         [[super.tabBarController.viewControllers objectAtIndex:2] tabBarItem].badgeValue = nil;
                         
                     }
-                    else {
+                    else
+                    {
                         [[super.tabBarController.viewControllers objectAtIndex:2] tabBarItem].badgeValue = [[responseObject objectForKey:@"CounterResult"] objectForKey:@"Mesages"];
                     }
                     
-                    if ([[[responseObject objectForKey:@"CounterResult"] objectForKey:@"Notifications"] isEqualToString:@"0"]) {
+                    if ([[[responseObject objectForKey:@"CounterResult"] objectForKey:@"Notifications"] isEqualToString:@"0"])
+                    {
                         [[super.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue = nil;
                     }
-                    else {
+                    else
+                    {
                         [[super.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue = [[responseObject objectForKey:@"CounterResult"] objectForKey:@"Notifications"];
                     }
                 }
@@ -1209,14 +1186,14 @@
                 [self.dateImageView setHidden:NO];
                 [self.dontHaveMessage setHidden:NO];
                 self.dontHaveMessage.text = @"You don't have any dates.";
-
+                
                 [datesTable setHidden:YES];
                 [self.segmentButton setHidden:YES];
                 [_datesView setHidden:NO];
                 [self.datesWithSegmentView setHidden:YES];
             }
         }
-            
+        
         else
         {
             [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -1224,12 +1201,11 @@
             [self.dontHaveMessage setHidden:NO];
             [datesTable setHidden:YES];
             self.dontHaveMessage.text = @"You don't have any dates.";
-
+            
             [self.segmentButton setHidden:YES];
             [_datesView setHidden:NO];
             [self.datesWithSegmentView setHidden:YES];
         }
-        
     }];
 }
 
@@ -1239,10 +1215,12 @@
     
     [self.dateImageView setHidden:YES];
     [self.dontHaveMessage setHidden:YES];
+    
     NSString *userIdStr = sharedInstance.userId;
     NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@",APIDateList,userIdStr];
     NSString *encodedUrl = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [ProgressHUD show:@"Please wait..." Interaction:NO];
+    
     [ServerRequest AFNetworkGetRequestUrl:encodedUrl withParams:nil CallBack:^(id responseObject, NSError *error) {
         NSLog(@"response object Get UserInfo List %@",responseObject);
         [ProgressHUD dismiss];
@@ -1253,12 +1231,11 @@
             [datesTable setHidden:YES];
             [_datesView setHidden:NO];
             self.dontHaveMessage.text = @"You don't have any dates.";
-
+            
             [self.datesWithSegmentView setHidden:YES];
             [self.dateImageView setHidden:NO];
             [self.dontHaveMessage setHidden:NO];
             [self.segmentButton setHidden:YES];
-            //
         }
         else if(!error)
         {
@@ -1266,28 +1243,22 @@
             [datesTable setHidden:NO];
             [_datesView setHidden:YES];
             [self.datesWithSegmentView setHidden:NO];
-          //  self.dontHaveMessage.text = @"You don't have any current dates.";
-
             NSLog(@"Response is --%@",responseObject);
+            
             if ([[responseObject objectForKey:@"StatusCode"] intValue] == 1) {
                 
                 upComingDateArray = [[NSMutableArray alloc]init];
                 pendingDateArray = [[NSMutableArray alloc]init];
                 historyDateArray = [[NSMutableArray alloc]init];
                 inProgressDateArray = [[NSMutableArray alloc]init];
+                
                 if ([[[responseObject objectForKey:@"result"]objectForKey:@"PendingDate"] isKindOfClass:[NSArray class]]) {
                     pendingDateArray = [[responseObject objectForKey:@"result"]objectForKey:@"UserDList"];
                 }
-                //                if ([[[responseObject objectForKey:@"result"]objectForKey:@"UpcomingDate"] isKindOfClass:[NSArray class]]) {
-                //                    upComingDateArray =  [[responseObject objectForKey:@"result"]objectForKey:@"UpcomingDate"];
-                //
-                //                }
+                
                 if ([[[responseObject objectForKey:@"result"]objectForKey:@"HistoryDate"] isKindOfClass:[NSArray class]]) {
                     historyDateArray =  [[responseObject objectForKey:@"result"]objectForKey:@"HistoryDate"];
                 }
-                //                if ([[[responseObject objectForKey:@"result"]objectForKey:@"Progressdate"] isKindOfClass:[NSArray class]]) {
-                //                    inProgressDateArray =  [[responseObject objectForKey:@"result"]objectForKey:@"Progressdate"];
-                //                }
                 
                 if ( (!(pendingDateArray.count)) &&(!(historyDateArray.count)))
                 {
@@ -1296,7 +1267,7 @@
                     [self.dontHaveMessage setHidden:NO];
                     [datesTable setHidden:YES];
                     self.dontHaveMessage.text = @"You don't have any dates.";
-
+                    
                     [self.segmentButton setHidden:YES];
                     [_datesView setHidden:NO];
                     [self.datesWithSegmentView setHidden:YES];
@@ -1308,7 +1279,7 @@
                     [self.dontHaveMessage setHidden:YES];
                     [datesTable setHidden:NO];
                     self.dontHaveMessage.text = @"You don't have any dates.";
-
+                    
                     [self.segmentButton setHidden:NO];
                     [_datesView setHidden:YES];
                     [self.datesWithSegmentView setHidden:NO];
@@ -1319,7 +1290,6 @@
                 if ([[responseObject objectForKey:@"CounterResult"] isKindOfClass:[NSDictionary class]]) {
                     if ([[[responseObject objectForKey:@"CounterResult"] objectForKey:@"Dates"] isEqualToString:@"0"]) {
                         [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
-                        
                     }
                     else
                     {
@@ -1341,7 +1311,6 @@
                         [[super.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue = [[responseObject objectForKey:@"CounterResult"] objectForKey:@"Notifications"];
                     }
                 }
-                
             }
             else {
                 
@@ -1367,7 +1336,6 @@
             [_datesView setHidden:NO];
             [self.datesWithSegmentView setHidden:YES];
         }
-        
     }];
 }
 

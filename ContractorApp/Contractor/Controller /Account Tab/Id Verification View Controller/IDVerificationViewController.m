@@ -199,7 +199,7 @@
         
         
         //        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@",@"http://ondemandapp.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserDocument"];
-        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@",@"http://doumees.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserDocument"];
+        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@",@"http://www.doumees.com/api/ImgaeUploader/Post",userIdStr,@"UserDocument"];
         
         NSString *encodedUrl = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         

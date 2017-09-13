@@ -407,7 +407,7 @@
                 }
                 
                 else {
-                    [CommonUtils showAlertWithTitle:@"Alert" withMsg:[responseObject objectForKey:@"Message"] inController:self];
+                 [CommonUtils showAlertWithTitle:@"System Unavailable" withMsg:@"Our system is currently unavailable at this time. Please try again later."  inController:self];
                 }
             }
             else {

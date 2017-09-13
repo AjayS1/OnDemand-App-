@@ -328,7 +328,7 @@
         fileData = [NSData dataWithContentsOfURL:videoPathUrl];
         mimeType =@"video/quicktime";
         
-        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@",@"http://doumees.flexsin.in/api/ImgaeUploader/Post",userIdStr,@"UserVideo"];
+        NSString *urlstr=[NSString stringWithFormat:@"%@?userID=%@&Type=%@",@"http://www.doumees.com/api/ImgaeUploader/Post",userIdStr,@"UserVideo"];
         NSString *encodedUrl = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

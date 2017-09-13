@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *urlAddress = @"http://doumees.flexsin.in/ForgetPassword/Index";
+    NSString *urlAddress = @"http://www.doumees.com/ForgetPassword/Index";
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webViewForgetPassword setBackgroundColor:[UIColor whiteColor]];

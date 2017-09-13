@@ -13,14 +13,8 @@
 @implementation UIImage (ForceDecode)
 
 + (UIImage *)decodedImageWithImage:(UIImage *)image {
-    // while downloading huge amount of images
-    // autorelease the bitmap context
-    // and all vars to help system to free memory
-    // when there are memory warning.
-    // on iOS7, do not forget to call
-    // [[SDImageCache sharedImageCache] clearMemory];
     
-    if (image == nil) { // Prevent "CGBitmapContextCreateImage: invalid context 0x0" error
+        if (image == nil) { // Prevent "CGBitmapContextCreateImage: invalid context 0x0" error
         return nil;
     }
     
@@ -31,13 +25,14 @@
         }
         
         CGImageRef imageRef = image.CGImage;
-        
         CGImageAlphaInfo alpha = CGImageGetAlphaInfo(imageRef);
-        BOOL anyAlpha = (alpha == kCGImageAlphaFirst ||
+        BOOL anyAlpha =
+        (alpha == kCGImageAlphaFirst ||
                          alpha == kCGImageAlphaLast ||
                          alpha == kCGImageAlphaPremultipliedFirst ||
                          alpha == kCGImageAlphaPremultipliedLast);
-        if (anyAlpha) {
+        
+        if (anyAlpha){
             return image;
         }
         
@@ -58,7 +53,6 @@
         NSUInteger bytesPerPixel = 4;
         NSUInteger bytesPerRow = bytesPerPixel * width;
         NSUInteger bitsPerComponent = 8;
-
 
         // kCGImageAlphaNone is not supported in CGBitmapContextCreate.
         // Since the original image here has no alpha info, use kCGImageAlphaNoneSkipLast
@@ -84,7 +78,6 @@
         
         CGContextRelease(context);
         CGImageRelease(imageRefWithoutAlpha);
-        
         return imageWithoutAlpha;
     }
 }
